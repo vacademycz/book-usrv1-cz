@@ -368,14 +368,14 @@ ohledu na to, zda je k počítači někdo přihlášen. Poněkud nesprávně se 
    Detailní informace o init systémech v Ubuntu a Debianu jsou v pokračování tohoto kurzu. Zde o
    nich budeme mluvit jen stručně.
 
-   .. todo: intersphinx odkaz na <<../book-usrv2-cz/06-rizeni-planovani-procesu.adoc#init-systemy
+   .. todo:: intersphinx odkaz na <<../book-usrv2-cz/06-rizeni-planovani-procesu.adoc#init-systemy
 
 Spoušteč service
 ----------------
 
 Spoušteč service sloužil k ovládání SysV nebo Upstart služeb. I když bychom měli v systemd systémech preferovat příkaz ``systemctl``, díky zpětné kompatibilitě systemd nám `service` funguje nadále pro všechny tři možné "formáty" služeb:
 
-.. todo: systemctl interpsphinx odkazem na <<../book-usrv2-cz/06-rizeni-planovani-procesu.adoc#systemd-systemctl,spušteč `systemctl`>>
+.. todo:: systemctl interpsphinx odkazem na <<../book-usrv2-cz/06-rizeni-planovani-procesu.adoc#systemd-systemctl,spušteč `systemctl`>>
 
 * staričké tradiční System V init skripty
 * Upstart joby

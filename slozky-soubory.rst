@@ -244,7 +244,7 @@ Pevné i symbolické linky uvidíte ve výpisu ``ls -l`` jako šipky na originá
 	lrwxrwxrwx 1 root root  27 úno  5 12:12 K20speech-dispatcher -> ../init.d/speech-dispatcher
 	...
 
-.. todo: Jak od sebe poznat v "ls -l" symbolické a pevné linky? Jen symlinky maj šipky. Hardlink
+.. todo:: Jak od sebe poznat v "ls -l" symbolické a pevné linky? Jen symlinky maj šipky. Hardlink
    lze poznat jen tím, že na něj ukazuje více inodů (druhý sloupec)
 
 Vyhledávání

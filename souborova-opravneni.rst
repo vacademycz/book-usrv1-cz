@@ -352,7 +352,7 @@ položku nastavujete seznam oprávnění pro neomezený počet uživatelů a sku
 
 Vzhledem k velmi malému použití ACL oprávnění v praxi se tímto modelem nebudeme hlouběji zabývat.
 
-.. todo: něco o ACL na http://www.linuxexpres.cz/praxe/sprava-linuxoveho-serveru-pristupova-prava-a-acl
+.. todo:: něco o ACL na http://www.linuxexpres.cz/praxe/sprava-linuxoveho-serveru-pristupova-prava-a-acl
 
 .. rubric:: Poznámky
 

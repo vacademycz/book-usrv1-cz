@@ -289,7 +289,7 @@ apt-get.
 
    Aptitude správce balíčků a repozitářů
 
-.. todo: PPA archívy a Snapy
+.. todo:: PPA archívy a Snapy
 
 .. _rpm:
 
@@ -317,4 +317,4 @@ Jako nízkoúrovnový ekvivalent dpkg pro RPM systémy slouží program yum::
 
 	$ yum install super-aplikace
 
-.. todo: Aktualizovat o informaci o dnf, který nahradil yum, a od jaké verze Fedory.
+.. todo:: Aktualizovat o informaci o dnf, který nahradil yum, a od jaké verze Fedory.

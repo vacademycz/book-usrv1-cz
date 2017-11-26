@@ -241,7 +241,7 @@ Zobrazení man stránky je velmi jednoduché::
 	
 např. ``man nano``. Kapitola se většinou neuvádí.
 
-.. todo: odkaz na less
+.. todo:: odkaz na less
 
 Prohlížečem manuálu je ve skutečnosti program less, proto si nyní jen řekneme, že prohlížeč less
 
@@ -305,7 +305,7 @@ např. ``help cd`` apod.
 .. tip:: Pro zvědavé existuje zabudovaný příkaz ``type``, který poví, zda je parametr program,
    příkaz nebo alias. Zkuste si např. ``type echo`` nebo ``type nano``.
 
-.. todo: odkaz na aliasy
+.. todo:: odkaz na aliasy
 
 Příhlášení, odhlášení
 =====================
@@ -318,7 +318,7 @@ Příkaz exit už znáte. Ukončí vaše běžící programy a odhlásí vás.
 
 Logout je podobný, ale neumožní vás ohlásit, běží-li na pozadí nějaké programy.
 
-.. TODO: Ctrl-D taky odhlásí
+.. todo:: Ctrl-D taky odhlásí
 
 Vypnutí a restart PC
 ====================
@@ -329,13 +329,13 @@ Příkaz shutdown vypíná nebo restartuje PC. Protože tato operace by ovlivnil
 uživatele a může ji provést jen administrátor, musíme celý program předat jako parametr programu
 sudo.
 
-.. todo odkaz na sudo výše
+.. todo:: odkaz na sudo výše
 
 .. rubric:: sudo reboot
 
 Provede restart.
 
-.. TODO taky halt, ale není ve <<vypnutiPC>>??
+.. todo:: taky halt, ale není ve <<vypnutiPC>>??
 
 .. note:: Detailní informace o tomto tématu najdete v :ref:`vypnutiPC`.
 
@@ -523,7 +523,7 @@ stejné::
 	$ ls -alh
 	$ ls -ahl
 	
-.. TODO: také ls -l -h -a ap.
+.. todo:: také ls -l -h -a ap.
 
 .. image:: img/ls-l.png
    :alt: Význam sloupců ls -l
@@ -597,7 +597,7 @@ přesměrujeme jinam nebo navzájem propojíme.
 Nejčastěji přesměrováváme standardní V/V mezi souborem a obrazovkou, ale vzhledem k faktu, že v
 Linuxu je vše soubor můžeme přesměrování provést na/z sériového portu, pevného disku ap.
 
-.. TODO: Odkaz z "vše je soubor" na kap. 02 "soubory zařízeních" USRV2.
+.. todo:: Odkaz z "vše je soubor" na kap. 02 "soubory zařízeních" USRV2.
 
 Operátory
 ---------
@@ -642,7 +642,7 @@ Speciální soubor zařízení (device file) ``/dev/urandom`` obsahující nekon
 náhodných čísel je takto filtrován jen na tisknutelné znaky. Výstup STDOUT, jinak směřující na
 obrazovku, je přesměrován operátorem ``>`` do souboru ``random.txt``.
 
-.. TODO: Odkaz na device file z USRV2.
+.. todo:: Odkaz na device file z USRV2.
 
 .. rubric:: Připojit, nepřepsat
 

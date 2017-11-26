@@ -91,7 +91,7 @@ na PC nevirtualizovaně.
 Wubi nainstaluje Ubuntu do (z pohledu Windows) jediného obrovského souboru na vybraném existujícím
 disku Windows. Při každém startu si budete moci vybrat, zda načíst běžné Windows nebo Ubuntu.
 
-.. TODO: je ještě wubi podporováno??
+.. todo:: je ještě wubi podporováno??
 
 Upgrade
 =======
@@ -245,7 +245,7 @@ Jiným modernějším přístupem je *LVM neboli Logical Volume Management* (ně
 
 Nevýhodou je, že se musíme naučit používat nové nástroje místo tradičních programů.
 
-.. todo: přidat intersphinx odkaz na usrv2, kap. o LVM
+.. todo:: přidat intersphinx odkaz na usrv2, kap. o LVM
 
 Package tasks (groups)
 ======================

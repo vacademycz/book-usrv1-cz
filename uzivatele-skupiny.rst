@@ -121,7 +121,7 @@ uživatelů sudo k ochraně účtu stejně jako by se jednalo o účet superuži
 
 Druhou nevýhodou může být obtížné :ref:`přesměrování výstupu <presmerovani>` výstupu "sudovaného" programu pomocí operátorů např. ``>``, ``>>``, ``|``. Např. když zkusíte vymazat ``error.log`` pomocí "černé díry" ``/dev/null``:
 
-.. todo: odkaz na kapitolu ve dvojce o /dev/null
+.. todo:: odkaz na kapitolu ve dvojce o /dev/null
 
 ::
 
@@ -328,7 +328,7 @@ Soubory uživatele je před odstraněním vhodné zazálohovat do :ref:`zkomprim
 .. important:: V jiných systémech stejnou práci zařizuje ``userdel``. I když je tento skript také
    existuje v Ubuntu/Debian, zde preferujte vždy ``deluser``.
 
-.. todo: Přidat odkaz do II do SSH s textem "Přestože SSH popisujeme v ____pokračování___ této
+.. todo:: Přidat odkaz do II do SSH s textem "Přestože SSH popisujeme v ____pokračování___ této
    příručky, zmínímě důležitý aspekt..."
 
 .. topic:: Smazání uživatele a SSH přístup
