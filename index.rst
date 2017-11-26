@@ -39,10 +39,3 @@ odkazem.
    souborova-opravneni
    instalace-sprava-programu
    procesy-demoni
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
