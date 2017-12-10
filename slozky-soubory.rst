@@ -1,9 +1,8 @@
 Složky a soubory
 ****************
 
-Nejprve projdeme, jak vypadá organizace linuxového disku, nejdůležitější složky, soubory a jejich
-význam. V druhé ve skrze praktické části budeme soubory a složky vytvářet, mazat, archivovat,
-přesouvat ap.
+Nejprve si projdeme tím, jak vypadá organizace linuxového disku, nejdůležitější složky, soubory a 
+jaký je jejich význam. Ve druhé, veskrze praktické části, budeme soubory a složky vytvářet, mazat, archivovat, přesouvat ap.
 
 Hlavní odlišnosti Linuxu
 ========================
@@ -45,15 +44,17 @@ Jako oddělovač diskové cesty slouží běžné lomítko ``/`` (dopředné lom
 
 .. rubric:: Složka je druh souboru
 
-Mluvíme-li proto o souboru vždy informace platí i pro složky. Podobně mohou mít i složky přípony
+Mluvíme-li proto o souboru, informace vždy platí i pro složky. Podobně mohou mít i složky přípony
 (např. ``/etc/init.d/``).
 
 Prohlídka stromu složek
 =======================
 
-Všechny složky jsou různě hluboko zanořené podsložky jediného *kořenu (root)* se jménem ``/``. Jak jsme již zmínili jako uživatel se nezajímáme, zda jsou tyto podsložky kořene na stejném nebo různých oddílech a discích.
+Všechny složky jsou různě hluboko zanořené podsložky jediného *kořenu (root)* se jménem ``/``. 
+Jak jsme již zmínili jako uživatel se nezajímáme, zda jsou tyto podsložky kořene na stejném nebo 
+na různých oddílech a discích.
 
-Hierarchie a význam složek vyhází z unixové tradice a je popsána normou `Filesystem Hierarchy
+Hierarchie a význam složek vychází z unixové tradice a je popsána normou `Filesystem Hierarchy
 Standard (FHS) <http://www.pathname.com/fhs/>`_. Tento standard dodržuje nejen Ubuntu a Debian, ale
 i všechny velké hlavní distribuce.
 
@@ -81,10 +82,10 @@ Nejdůležitější složky stromu jsou následující:
     reboot, ifconfig ap.
   * ``/sys/`` -- virtuální složka pro zjištění nebo nastavení informací o jádře
   * ``/tmp/`` -- místo pro dočasné soubory a složky
-  * ``/usr/`` -- uživatelské programy neboli většinou software instalovaný dodatečně po skončení
+  * ``/usr/`` -- uživatelské programy, neboli většinou software, instalovaný dodatečně, po skončení
     instalace.
 
-   * ``/bin/`` -- v případě GUI systémy jsou zde převážně grafické programy.
+   * ``/bin/`` -- v případě GUI systému jsou zde převážně grafické programy.
    * ``/lib/`` -- sdílené knihovny uživatelských programů
    * ``/share/doc/`` -- dokumentace programů (README, návody ap.) a manuálové stránky. V době před
      Googlem se hledali informace právě zde :-)
@@ -159,8 +160,8 @@ soubor::
 	$ touch novy-soubor
 
 Použití touch (dotkni se) na vytváření prázdných souborů je trochu "zneužití" tohoto programu, jehož
-původní účel bylo aktualizovat čas poslední modifikace souboru. Využíváme však vlastnosti touch, že
-pokud uvedený soubor neexistuje, je vytvořen.
+původním účelem bylo aktualizovat čas poslední modifikace souboru. Využíváme vlastnosti touch tím, 
+že program, neexistuje-li již soubor s tímto názvem, jej vytvoří.
 
 Vymazání složky
 ---------------
@@ -169,7 +170,7 @@ rmdir maže složky, ale bohužel jen prázdné::
 
 	$ rmdir prazdna-slozka
 
-Proto se používá univerzálnější rm, který projdete rekurzivně (``-r, --recursive``) obsah a násilím
+Proto se používá univerzálnější rm, který projde rekurzivně (``-r, --recursive``) obsah a násilím
 vymaže i neprázdné složky (``-f, --force``)::
 
 	$ rm -rf neprazdna-slozka/
@@ -188,7 +189,8 @@ Cp kopíruje standardně jen soubory a jen v přímé podúrovni (ne v podadres�
 
 	$ cp odkud kam
 
-Pro kopírování adresářů a podadresářů slouží volba ``-r, -R, --recursive`` (můžete si vybrat parametr, který se vám líbí nejvíce)::
+Pro kopírování adresářů a podadresářů slouží volba ``-r, -R, --recursive`` (můžeme si vybrat 
+parametr, který se vám líbí nejvíce)::
 
 	$ cp -r nejaka/slozka/ do/jine/slozky
 
@@ -196,7 +198,7 @@ Přesun a přejmenování
 ---------------------
 
 Operace přesun a přejmenování jsou z technického pohledu identické. Příkaz mv (move) tedy můžeme
-použít pro oba dva druhy změny::
+použít pro oba druhy změny::
 
 	$ mv soucasny-nazev novy-nazev
 	$ mv soubor ../zaloha/
@@ -213,8 +215,8 @@ Linux rozlišuje dva druhy odkazů:
 * operace nad **pevným odkazem (hard link)** se chovají jako by byli učiněny nad originálem. Smazání
   pevného odkazu znamená smazání originálu samotného.
 * jako prevence nechtěného smazání originálu se proto mnohem častěji používají
-  **symbolické odkazy (symlinks nebo soft links)**, kdy odkaz a originál existuje víceméně
-  nezávisle. Musíme sami zajistit, aby se při přejmenování, přesunutí nebo smazání originálu nestali
+  **symbolické odkazy (symlinks nebo soft links)**, kdy odkaz i originál existují víceméně
+  nezávisle. Musíme sami zajistit, aby se při přejmenování, přesunutí nebo smazání originálu nestaly
   *neplatnými odkazy*, které nikam nesměřují.
 
 Vytváření odkazů obstarává program ln. Bez parametru vytváří pevné odkazy::
@@ -245,7 +247,7 @@ Pevné i symbolické linky uvidíte ve výpisu ``ls -l`` jako šipky na originá
 	...
 
 .. todo: Jak od sebe poznat v "ls -l" symbolické a pevné linky? Jen symlinky maj šipky. Hardlink
-   lze poznat jen tím, že na něj ukazuje více inodů (druhý sloupec)
+   lze poznat jen tím, že na něj ukazuje více inodů (druhý sloupec).
 
 Vyhledávání
 ===========
@@ -256,9 +258,9 @@ find
 ----
 
 Program find je jedním z nejsložitějších vůbec a množství voleb je doslova dech beroucí. Find dovede
-vyhledávat na základě rozličných kritérií jako datum modifikace, vlastník, hloubka vnoření, velikost
-větší, než atd. S vyhovujícími soubory umí kromě vypsání provádět i změny jako přejmenování,
-vymazání atd. atd..
+vyhledávat na základě rozličných kritérií jako: datum modifikace, vlastník, hloubka vnoření, 
+velikost větší, než atd. S vyhovujícími soubory umí kromě vypsání provádět i změny jako 
+přejmenování, vymazání atd. atd..
 
 My zredukujeme bohaté možnosti find na hledání souboru nebo složky podle jména. Obecná syntaxe find
 pro tento případ je::
@@ -295,7 +297,7 @@ je zpravidla aktualizován jednou denně. Locate tedy nenajde nedávno vytvořen
 grep -r
 -------
 
-Poslední možností hledání vlastně již znáte. Program grep s volbou ``-r`` (rekurzivně) slouží pro
+Poslední možnost hledání vlastně již znáte. Program grep s volbou ``-r`` (rekurzivně) slouží pro
 hledání *ne souborů, ale v obsahu souborů*. Volání můžete doplnit parametrem ``-i``, aby grep
 nerozlišoval velikost písmen.
 
@@ -328,10 +330,12 @@ příponu ``.gz`` nebo ``.gzip``.
    pomocí programů *zip a unzip*.
 
 Méně se můžete setkat s komprimovanými soubory ``.bz2``, které mají lepší kompresní poměr, než
-``.gz``, ale nejsou tak rozšířené. K vytváření a rozbalení byste použili programy **bzip2** a
+``.gz``, ale nejsou tak rozšířené. K vytváření a rozbalení bysme použili programy **bzip2** a
 **bunzip2**.
 
-Tradičním unixovým programem pro archivaci je **tar** (tape archiver), který dnes samozřejmě používáme se běžnými soubory na disku místo páskovými mechanikami. Obvyklou příponou je ``.tar``. Tar však umí v jednom kroku soubory zkomprimovat i zaarchivovat (a obráceně). Takové soubory mají příponu ``.tar.gz``, ``.tgz`` pro tar+gz, resp. ``.tar.bz2`` pro tar+bzip2.
+Tradičním unixovým programem pro archivaci je **tar** (tape archiver), který dnes samozřejmě 
+používáme s běžnými soubory na disku místo s páskovými mechanikami. Obvyklou příponou je 
+``.tar``. Tar však umí v jednom kroku soubory zkomprimovat i zaarchivovat (a obráceně). Takové soubory mají příponu ``.tar.gz``, ``.tgz`` pro tar+gz, resp. ``.tar.bz2`` pro tar+bzip2.
 
 Časté volby taru jsou:
 
@@ -361,7 +365,7 @@ Např.::
 
 	$ tar cvf archiv.tar soubor1 soubor2 slozka1 slozka2 slozka3/podslozka1
 
-Pokud potřebujete vytvořit zkomprimovaný archív, pak přidejte parametr ``-z`` (gzip)::
+Pokud potřebujeme vytvořit zkomprimovaný archív, pak přidáme parametr ``-z`` (gzip)::
 
 	$ tar cvfz archiv.tar.gz soubor1 soubor2 slozka1 slozka2 slozka3/podslozka1
 
@@ -374,11 +378,11 @@ Pokud potřebujete vytvořit zkomprimovaný archív, pak přidejte parametr ``-z
 
 .. rubric:: Rozbalení archívu
 
-Tar archív (ne tar+gzip) rozbalíte do aktuální složky pomocí
+Tar archív (ne tar+gzip) rozbalíme do aktuální složky pomocí
 
 	$ tar xvf archiv.tar
 
-Jedná-li se o zkomprimovaný archív přidejte parametr +-z+ (unzip)
+Jedná-li se o zkomprimovaný archív přidáme parametr +-z+ (unzip)
 
 	$ tar xvfz archiv.tar.gz
 
@@ -386,7 +390,7 @@ Midnight Commander (mc)
 =======================
 
 Poté, co jsme se trápili s příkazy pro práci se soubory, archivaci, komprimaci a vyhledáváním, se
-budete možná zlobit, že vám představíme mc jako poslední program této kapitoly.
+budete možná zlobit, že si představíme mc jako poslední program této kapitoly.
 
 Midnight Commander (mc) je souborový manažer vycházející ze slavného Norton Commanderu. V Ubuntu
 není standardně a proto si ho nainstalujte a pak spušťte pomocí mc::

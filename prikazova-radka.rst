@@ -2,8 +2,8 @@ Příkazová řádka
 ***************
 
 V této kapitole se seznámíme s příkazovou řádkou Linuxu, která je hlavním nástrojem a pracovním
-prostředním každého administrátora. Zvládnutí a navyknutí si na příkazovou řádku je nutná podmínka
-bez, které nemůžete Linux efektivně používat a ovládat.
+prostředím každého administrátora. Zvládnutí a navyknutí si na příkazovou řádku je nutná podmínka
+bez, které nemůžeme Linux efektivně používat a ovládat.
 
 Zcela mylná je představa, že příkazová řádka v době grafických nebo webových rozhraní je něco
 překonaného nebo zbytečného. Důvodů, proč je příkazová řádka stále základní nejdůležitější pomocník
@@ -20,12 +20,12 @@ Přihlášení
 ==========
 
 Po dokončení instalace a restartu se můžeme konečně přihlásit jménem a heslem zvoleným při
-instalátoru.
+instalaci.
 
 .. important::
 
-   Heslo zadávané při přihlašování se *záměrně při psaní nezobrazuje* podobně jako při většin
-   dalších okamžicích v Linuxu, když máte napsat heslo. To však nemá vliv na editaci - stále můžete
+   Heslo zadávané při přihlašování se *záměrně při psaní nezobrazuje* podobně jako ve většině
+   případech v Linuxu, kdy máte napsat heslo. To však nemá vliv na editaci - stále můžete
    používat např. :kbd:`Backspace` ap.
 
 Po přihlášení vás Ubuntu uvítá informací o aktuálním čase, stavu počítače a aktualizovatelných
@@ -65,8 +65,8 @@ speciálních kláves.
 Speciální znaky
 ===============
 
-Na tomto místě se musíme zastavit a naučit se číst speciální znaky na které možná nejste běžně
-zvyklý je psát, ale v příkazové řádce Linuxu mají velmi důležitý význam a často se používají.
+Na tomto místě se musíme zastavit a naučit se číst speciální znaky na které možná nejste zvyklí, ale
+v příkazové řádce Linuxu mají velmi důležitý význam a často se používají.
 
 .. important:: Následující znaky se naučte bezchybně psát, budete je opravdu používat.
 
@@ -147,7 +147,7 @@ kde
 * ``joe`` je vaše uživatelské jméno
 * ``srv-foo`` název počítače
 * ``~`` aktuální pracovní složky (tilda je domovská složka)
-* ``$`` indikuje, že odkud můžete psát příkazy
+* ``$`` indikuje, že odtud můžete psát příkazy
 
 Pohyb a ovládání na promptu
 ---------------------------
@@ -169,7 +169,7 @@ na tuto kl. zkratka nereagují a ukončují se nejčastěji např. :kbd:`Q`, př
 
 .. rubric:: Klávesová zkratka :kbd:`Ctrl+D` (EOF)
 
-Znak EOF neboli End of file (konec souboru) se používá v několika málo posledních programem jako
+Znak EOF neboli End of file (konec souboru) se používá v několika málo posledních programech jako
 mail nebo at a znamená "ukončuji zadání, teď pracuj ty".
 
 .. rubric:: Klávesová zkratka :kbd:`Ctrl+Z`
@@ -185,7 +185,7 @@ souboru, složky, programu, a u některých programů dokonce i parametry progra
 
 .. rubric:: Klávesové zkratky :kbd:`Ctrl+Alt+F1` až :kbd:`Ctrl+Alt+F7`
 
-Standardně můžeme pracovat až v 7 terminálech současně mezi kterými těmito zkratkami přepínáme.
+Standardně můžeme pracovat až v 7 terminálech současně a mezi nimi pomocí těchto zkratek přepínat.
 1. až. 6. jsou vždy textové. 7. terminál je GUI, je-li nainstalováno, nebo startovací obrazovka v
 případě textového systému.
 
@@ -291,15 +291,15 @@ Chcete-li tedy např. zjistit informace o příkazu passwd z kapitoly 1, použij
 
 .. rubric:: Nápověda pro příkazy -- help
 
-Někté programy jsou ve skutečnosti *zabudované příkazy (builtin commands)* Bashe. Mezi mezi ně ty
-nejzákladější jako ``cd``, ``exit``, ``fg``, ``jobs``, ``echo``, ``set`` ap. Pro ně neexistuje
+Někté programy jsou ve skutečnosti *zabudované příkazy (builtin commands)* Bashe. Patří mezi ně ty
+nejzákladější, jako ``cd``, ``exit``, ``fg``, ``jobs``, ``echo``, ``set`` ap. Pro ně neexistuje
 manuálová stránka, ale trochu jednodušší systém nápovědy ``help``::
 
 	help <zabudovaný-příkaz>
 	
 např. ``help cd`` apod.
 
-.. tip:: Není potřeba vědět, co je program a co příkaz. Zapamatujte si zkráta, že pokud
+.. tip:: Není potřeba vědět, co je program a co příkaz. Zapamatujte si zkrátka, že pokud
    ``man <něco>`` neexistuje, zkuste ``help <něco>``.
 
 .. tip:: Pro zvědavé existuje zabudovaný příkaz ``type``, který poví, zda je parametr program,
@@ -316,7 +316,7 @@ Příkaz exit už znáte. Ukončí vaše běžící programy a odhlásí vás.
 
 .. rubric:: logout
 
-Logout je podobný, ale neumožní vás ohlásit, běží-li na pozadí nějaké programy.
+Logout je podobný, ale neumožní vás odhlásit, běží-li na pozadí nějaké programy.
 
 .. TODO: Ctrl-D taky odhlásí
 
@@ -347,8 +347,8 @@ Editory nano a vim
 
 .. rubric:: nano
 
-Pravděpodobně nejsnadnější editory pro textové prostředí je nano. Jeho název je narážkou na
-předchůdce program pico. Najdete ho v každé instalace Ubuntu nastavený jako výchozí editor.
+Pravděpodobně nejjednodušším editorem pro textové prostředí je nano. Jeho název je narážkou na
+předchůdce program pico. Najdete ho v každé instalaci Ubuntu nastavený jako výchozí editor.
 
 .. image:: img/nano.png
    :alt: Editor nano
@@ -364,13 +364,12 @@ Důležité parametry:
 
 * ``-c`` – zobrazit číslo řádku a sloupce v zápatí obrazovky, zobrazit číslo řádku na začátku nano
   neumí
-* ``-$`` – zalamovat dlouhé řádky (wrap). Protože $ znamená proměnnou shellu, **musíme parametr uvést
-  vždy jako poslední!**
+* ``-$`` – zalamovat dlouhé řádky (wrap). Protože $ znamená proměnnou shellu, **musíme parametr 
+uvést vždy jako poslední!**
 
 .. rubric:: vim a emacs
 
-Mezi další tradiční editory v Linuxu a Unixu patří vim (vi iMproved) a emacs, jejiž ovládání, ale
-rozhodně nepatří ke těm snadným ani intuitivním. 
+Mezi další tradiční editory v Linuxu a Unixu patří vim (vi iMproved) a emacs, ale jejich ovládání rozhodně není ani snadné, ani intuitivní. 
 
 Zájemce o Emacs odkazujeme internet.
 
@@ -396,8 +395,8 @@ Užitečnou volbou může být ``-n, --number`` zobrazující u vypisovaných ř
 .. rubric:: less
 
 Prohlížeč neboli pager less (méně) je opět slovní hříčkou na starší program more (více). Kdykoli
-použijete :ref:`man stránky <man-help>` čtete si je v programu less. Vyplatí se proto naučit
-výborně ovládat less.
+použijete :ref:`man stránky <man-help>` čtete si je v programu less. Vyplatí se proto, naučit se, 
+less, výborně ovládat.
 
 Příklad použití::
 
@@ -439,7 +438,7 @@ Vyzkoušejte si zajímavý příklad na ``tail -f``:
 #. Na prvním terminálu spusťte ``strings /dev/urandom > ~/random.txt``
 #. Chvilku nechte běžet
 #. Přepněte se např. na druhý terminál (:kbd:`Ctrl+Alt+F2`) a napište ``tail -f ~/random.txt``
-#. Střídejte po chvilkách první a druhý terminál
+#. Střídejte po chvilkách první a druhý terminál.
 
 Zatím jsme nevysvětlili znaky jako ``>``, ``~`` nebo co je ``/dev/random``, ale z příkladu sami
 jistě odtušíte, že první příkaz zapisuje náhodné znaky do souboru ``random.txt``.
@@ -457,7 +456,7 @@ Clear je obdoba ``cls`` z MS-DOSu a smaže obsah obrazovky.
 "zbláznil" a místo znaků zobrazuje "kliky-háky".
 
 .. image:: img/zblazneny-terminal.png
-   :alt: Na "zblázněný" terminál pomůže reset
+   :alt: Na "zblázněný" terminál pomůže reset.
 
 Pohyb na disku -- cd, pwd, ls
 =============================
@@ -503,7 +502,7 @@ Bez parametrů vypíše ls abecedně seřazený obsah ve sloupcích.
 Vyzkoušejte a zapamatujte si následující tři klíčové parametry ls:
 
 * ``-l, --long`` -- dlouhý výpis neboli do tabulky se sloupci oprávnění, vlastník, skupina,
-   velikost a samozřejmě názvem
+   velikost a samozřejmě název
 * ``-a, --all`` -- zobrazení i :ref:`skrytých souborů (tečkových souborů, dot-files) <skryte-soubory>`
 * ``-h, --human-readable`` -- velikost souboru v násobcích bajtů (např. 1K, 234M, 2G ap.)
 
@@ -582,7 +581,7 @@ Přesměrování vstupu a výstupu
 =============================
 
 Každý program žije zcela izolovaně od ostatních programů ve svém vlastním paměťovém prostoru.
-Jedinou možností spolupráce (výměny dat) mezi programy je používat zařízení jako síťová karta,
+Jedinou možností spolupráce (výměny dat) mezi programy je používat zařízení jako je síťová karta,
 soubory ap. Programy mají však k dispozici ještě tzv. standardní vstup a dva standardní výstupy.
 Tyto komunikační vstupy/výstupy (V/V, nebo anglicky input/output (I/O)) jako uživatel snadno
 přesměrujeme jinam nebo navzájem propojíme.
@@ -595,7 +594,7 @@ přesměrujeme jinam nebo navzájem propojíme.
   pro reportování chybových hlášek. Standardně je STDERR taktéž posílán na obrazovku.
 
 Nejčastěji přesměrováváme standardní V/V mezi souborem a obrazovkou, ale vzhledem k faktu, že v
-Linuxu je vše soubor můžeme přesměrování provést na/z sériového portu, pevného disku ap.
+Linuxu je vše soubor, můžeme přesměrování provést na/z sériového portu, pevného disku ap.
 
 .. TODO: Odkaz z "vše je soubor" na kap. 02 "soubory zařízeních" USRV2.
 
@@ -677,7 +676,7 @@ Roura neboli znak ``|`` (svislítko, pipe) kombinuje předchozí operátory pře
 STDOUT ``>``. Spojuje STDOUT na STDOUT následujícího programu napřímo bez nutnosti použití souboru
 jako "mezičlánku".
 
-Tento druh přesměrování jsme také již viděli použit v ukázce na :ref:`grep -i <grep-i>`, kdy jsme
+Tento druh přesměrování jsme také již viděli použitý v ukázce na :ref:`grep -i <grep-i>`, kdy jsme
 propojili STDOUT příkazu (běžně napojený na obrazovku) na STDIN grepu (běžně napojený na
 klávesnici)::
 
@@ -708,7 +707,7 @@ dva proudy::
 
 .. rubric:: Kombinace operátorů
 
-Operátory (nejčastěji rouru) můžeme vzájemně na sebe napojovat. Např.::
+Operátory (nejčastěji rouru) na sebe můžeme vzájemně napojovat. Např.::
 
 	$ apropos find | grep -i path | cat -n
 	1	glob (3)             - find pathnames matching a pattern, free memory from gl...
@@ -722,11 +721,11 @@ Proměnné prostředí
 ==================
 
 Jak jsme již několikrát zmínili, Bash je ve skutečnosti docela propracovaný programovací jazyk. Pro
-běžnou práci na příkazové řádce Bashe to skoro nepoznáme kromě proměnných prostředí podobající se
-proměnným v běžných programovacích jazycích.
+běžnou práci na příkazové řádce Bashe to skoro nepoznáme, kromě proměnných prostředí, která se 
+podobají proměnným v běžných programovacích jazycích.
 
-*Proměnná prostředí (environment variable)* umožňuje na číselnou nebo textovou hodnotu odkazovat
-jménem proměnné. Přítomnost nebo hodnota proměnné také může sloužit ke konfiguraci program podobně
+*Proměnná prostředí (environment variable)* umožňují na číselnou nebo textovou hodnotu odkazovat
+jménem proměnné. Přítomnost nebo hodnota proměnné také může sloužit ke konfiguraci programu podobně,
 jako parametry.
 
 .. rubric:: Nastavení a zrušení
@@ -751,7 +750,7 @@ protože Bash bude hledat neexistující proměnnou ``$vekletý``. Správně ted
 
 	$ dohromady="$jmeno je ${vek}letý"
 	
-Aby proměnnou prostředí viděl nejen interpret Bash sám, ale i programy intepretem spuštěné, musíme
+Aby proměnnou prostředí viděl nejen interpret Bash sám, ale i programy interpretem spuštěné, musíme
 proměnnou exportovat::
 
 	# Dříve vytvořená proměnná
@@ -760,7 +759,7 @@ proměnnou exportovat::
 	# Vytvoření a export v jednom kroku
 	$ export mesto=Praha
 	
-Jestli proměnná nebude již potřeba, pak můžete jen nastavit "prázdnou" hodnotu nebo úplně zrušit
+Jestli proměnná nebude již potřeba, pak můžeme jen nastavit "prázdnou" hodnotu nebo ji úplně zrušit
 (nebude již ve výpisu proměnných :ref:`env <env>`)::
 
 	$ mesto=
@@ -768,7 +767,7 @@ Jestli proměnná nebude již potřeba, pak můžete jen nastavit "prázdnou" ho
 
 .. rubric:: Vypsání
 	
-Hodnotu můžete vypsat příkazem ``echo``::
+Hodnotu můžeme vypsat příkazem ``echo``::
 
 	$ echo $dohromady
 	Joe je 29 let stary
@@ -816,7 +815,7 @@ nebo na začátek::
 	$ PATH=/moje/cesta:$PATH
 	
 Nyní tedy víme, proč spustíme program nano odkudkoli na disku. Ve které složce ve vyhledávací
-cestě se však nachází zjistíme pomocí ``which`` (který)::
+cestě se však nachází, zjistíme pomocí ``which`` (který)::
 
 	$ which nano
 	/usr/bin/nano
@@ -829,7 +828,7 @@ neuvedení uvozovek nebo při dvojitých uvozovkách.
 
 * ``"`` (dvojité uvozovky) --- Řetězec mezi dvojitými uvozovkami se prohledává na proměnné, které se
   rozbalí na hodnotu.
-* ``'`` (jednoduché uvozovky) -- Řetězec mezi jednoduchými uvozovkami je interpretován, tak jak
+* ``'`` (jednoduché uvozovky) -- Řetězec mezi jednoduchými uvozovkami je interpretován tak, jak
   je - tzn. nedochází k expanzi proměnných a ignorují se speciální znaky jako ``\n``, ``\t`` ap.
 * ``\``` (obrácený apostrof) -- Řetězec mezi obrácenými apostrofy se provede jako příkaz. Jeho
   výstup se stane výslednou hodnotou řetězce.
@@ -840,12 +839,12 @@ Neuvést uvozovky nebo uvést dvojité je stejné. Následující zápisy mají 
 	$ echo "$PATH"
 
 Předchozí příklady napsané v jednoduchých uvozovkách tedy nevypíší hodnotu proměnné, ale
-vytisknout se tak, jak jsou::
+vytisknou se tak, jak jsou::
 
 	$ echo '$PATH'
 	$PATH
 	
-Obrácené apostrofy jsou velmi zajímavou funkcí Bashe. Např. pro vypsání dnešního datumu můžete
+Obrácené apostrofy jsou velmi zajímavou funkcí Bashe. Např. pro vypsání dnešního data můžete
 použít::
 
 	$  echo Ahoj $USER! Dnes je `date`.
@@ -854,8 +853,9 @@ použít::
 Tilda ~
 =======
 
-Tildu bychom mohli zařadit mezi proměnnou prostředí. Chová se jako proměnná i když technicky není.
-Její hodnotou je absolutní cesta k domovskému adresáři. Proto jsou následující příkazy identické::
+Tildu bychom mohli zařadit mezi proměnnou prostředí. Chová se jako proměnná i když jí technicky 
+není. Její hodnotou je absolutní cesta k domovskému adresáři. Proto jsou následující příkazy 
+identické::
 
 	$ cd $HOME
 	$ cd ~
@@ -896,7 +896,7 @@ pomocí ``\``::
 
 .. rubric:: Neinterpretovat znak
 
-Některé znaky jako např. právě zpětné lomítko mají speciální význam pro vyhledávání (žolíky) nebo
+Některé znaky, jako např. právě zpětné lomítko, mají speciální význam pro vyhledávání (žolíky) nebo
 proměnné prostředí ($). Když ale opravdu chceme jen vypsat znaky jako \ nebo $ musíme je tzv.
 *escapovat* (napsat *escape sekvenci*) přidáním \ před znak::
 
@@ -920,7 +920,7 @@ postihnout skupinu souborů nebo složek vyhovující určitému pravidlu.
    +----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | ``[]``         | rozsah                                 | Pro "hd[a-e]" bude vyhovovat "hda", "hdb", "hdc", a "hde".                                                                                                                                          |
    +----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | ``[!]``        | vyloučit z rozsahu                     | Podobné jako [], ale slouží k vyloučení znaků v hranatých závorkách z vyhledávání. Pro "mujsoubor[!9]" bude vyhovat "mujsoubor1", "mujsoubor2", "muksoubor3" atd., ale nebude vyhovat "mujsoubor9". |
+   | ``[!]``        | vyloučit z rozsahu                     | Podobné jako [], ale slouží k vyloučení znaků v hranatých závorkách z vyhledávání. Pro "mujsoubor[!9]" bude vyhovat "mujsoubor1", "mujsoubor2", "mujsoubor3" atd., ale nebude vyhovat "mujsoubor9". |
    +----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | ``{}``         | výčet                                  | Pro "{mama,tata}" bude vyhovat "mama" nebo "tata".                                                                                                                                                  |
    +----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

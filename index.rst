@@ -9,7 +9,7 @@ Vítejte v příručce Ubuntu a Debian správce serveru I.!
 Vítáme budoucí i současné administátory v příručce školení "Ubuntu Debian správce serveru I."
 (kód kurzu USRV1)! Tato publikace je doplňkem k našim
 `kurzům Linuxu <https://vacademy.cz/tema/linux/>`_ a nabízíme ji zdarma všem návštěvníkům a 
-samozřejmě našim studentům. Budeme rádi, když vám pomůže naučit se Ubuntu, Debian, nebo dokonce i 
+samozřejmě našim studentům. Budeme rádi, když vám pomůže naučit se Ubuntu, Debian nebo dokonce i 
 jinou distribuci Linuxu.
 
 .. tip:: Přijďte na toto nebo další `školení od autorů této příručky <https://vacademy.cz/>`_!

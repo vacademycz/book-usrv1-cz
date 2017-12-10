@@ -2,7 +2,7 @@ Souborová oprávnění
 *******************
 
 Linux a Unix jsou od počátku víceuživatelské systémy. Bylo tedy třeba od sebe jednotlivé uživatele a
-jejich soubory "oddělit" a "ochránit" před ostatními. Systém souborových oprávněních na základě
+jejich soubory "oddělit" a "ochránit" před ostatními. Systém souborových oprávnění na základě
 identity uživatele a jeho členství ve skupinách je tím hlavním prostředkem.
 
 .. _sady-opravneni:
@@ -20,8 +20,8 @@ Oprávnění se samostatně nastavují pro
 Druhy práv
 ==========
 
-Soubor nebo složka má prvotně nastaveného vlastníka a skupinu na uživatele, který soubor vytvořil, a
-jeho primární skupinu. Základní oprávnění nastavitelná pro každou tuto sadu uživatelů jsou
+Soubor nebo složka má prvotně nastaveného vlastníka a skupinu na uživatele, který soubor vytvořil,
+a jeho primární skupinu. Základní oprávnění nastavitelná pro každou tuto sadu uživatelů jsou
 
 * *právo číst (read, r)*
 * *právo zápisovat (write, w)*
@@ -41,13 +41,13 @@ jeho primární skupinu. Základní oprávnění nastavitelná pro každou tuto 
    | spustit (x)   | spustit soubor  | vstoupit do složky nebo skrze projít (příkaz cd)             |
    +---------------+-----------------+--------------------------------------------------------------+
 
-Vlastní, skupina a oprávnění souboru jsou vidět v již důvěrně známém výpisu ``ls -l``.
+Vlastní skupina a oprávnění souboru jsou vidět v již důvěrně známém výpisu ``ls -l``.
 
 .. figure:: img/ls-l.png
 
    Výstup ls -l
 
-Oprávnění je zapsáno symbolicky jako tři trojice pro vlastníka, skupina a svět. Celkem tedy 9 znaků.
+Oprávnění je zapsáno symbolicky jako tři trojice pro vlastníka, skupinu a svět. Celkem tedy 9 znaků.
 Zápis je vždy v pořadí rwx. Není-li právo přítomnné je uvedena místo práva pomlčka, např. ``r--``,
 ``rw-`` ap.
 
@@ -70,7 +70,8 @@ Zápis je vždy v pořadí rwx. Není-li právo přítomnné je uvedena místo p
    modifikovat (třeba přejmenovat nebo editovat) i když na něj máme právo zápisu, ale nemáme ho na
    složku souboru.
 
-Typické oprávnění pro složky je ``rwxr-xr-x`` (číselně /viz později/ vyjádřeno 755), tedy vlastníkovi umožňující cokoli, lidem ze skupiny a světu číst složku a vstoupit.
+Typické oprávnění pro složky je ``rwxr-xr-x`` (číselně /viz později/ vyjádřeno 755), tedy 
+vlastníkovi umožňující cokoli, lidem ze skupiny a světu číst složku a vstoupit.
 
 Typické oprávnění pro soubory je ``rw-r--r--`` (číselně 644), tedy vlastníkovi umožňující číst a editovat, skupině a světu jen soubor číst.
 
@@ -78,7 +79,8 @@ Typické oprávnění pro soubory je ``rw-r--r--`` (číselně 644), tedy vlastn
 ===========================
 
 Zkušenější správci kromě symbolického zápisu oprávnění používají i *číselné (oktalové) vyjádření*
-[#okalove-vyjadreni]_ jako např. 644, 755, 777 ap. Výhoda tohoto způsobu je, že místo zápis a čtení 6 znaků potřebujeme jen 3 číslice.
+[#okalove-vyjadreni]_ jako např. 644, 755, 777 ap. Výhodou tohoto způsobu je, že místo zápisu 
+a čtení 6 znaků potřebujeme jen 3 číslice.
 
 Převod ze symbolických práv na číselná spočívá jen v součtu hodnot jednotlivých práv.
 
@@ -125,14 +127,14 @@ Kromě základních práv rwx bychom měli znát
 * *právo SUID* (set user ID upon execution, nastav uživatele po spuštění) -- symbolicky "s"
 * *právo SGID* (set group ID upon execution, nastavit skupina po spuštění) -- symbolicky "S"
 
-Jakýkoli program, který spustíme přebírá naše vlastní oprávnění. Nemůže tedy provést to, co my sami
+Jakýkoli program, který spustíme, přebírá naše vlastní oprávnění. Nemůže tedy provést to, co my sami
 nemůžeme. Je-li však na souboru programu nastaveno SUID nebo SGID právo, pak je spuštěn s právy
 vlastníka (SUID) nebo skupiny (SGID).
 
 Např. program :ref:`passwd <passwd>` může použít i běžný uživatel, který si chce změnit heslo sám
 sobě. Jak už víte, je heslo uloženo jako hash hodnota v ``/etc/shadow``. Ne-superuživatel však právo
 zápisu (editace) k tomuto souboru nemá (a nesmí mít). Tedy přestože passwd spouští omezený uživatel,
-sám program passwd se má práva roota, protože root je vlastníkem a na passwd je nastaveno SUID.
+sám program passwd má práva roota, protože root je vlastníkem a na passwd je nastaveno SUID.
 (Všimněte si písmena "s" napozici "x".)
 
 ::
@@ -194,7 +196,7 @@ Kde *<sada>* může být
 * ``o`` pro svět (others)
 * ``a`` pro "všichni" (all)
 
-Chceme-li nastavit práva např. pro vlastníka i skupiny můžete jako sadu uvést ``ug`` (user + group)
+Chceme-li nastavit práva např. pro vlastníka i skupiny, můžeme jako sadu uvést ``ug`` (user + group)
 ap.
 
 .. note:: Chmod bohužel nepoužívá terminologii "owner", "group", "world". Nepleťe si tedy ``o`` s
@@ -242,9 +244,9 @@ na zadané složce, všech podsložkách a souborech v ní::
 
 .. note:: Pozor na záměnu ``-R`` a ``-r``. Velké "R" muselo být zvoleno, protože "r" je interpretováno jako právo read.
 
-Rekurzivně pracující chmod nastavuje zadané oprávnění na dceřiné soubory i složky. To není vždy, co
-chcete. Jestli potřebujete nastavit rekurzivně, ale jen na soubory nebo jen a složky, musíte si
-vypomoci s find nebo možnostmi Bashe.
+Rekurzivně pracující chmod nastavuje zadané oprávnění na dceřiné soubory i složky. To ale není vždy 
+to, co chceme. Pokud potřebujeme nastavit rekurzivně, ale jen na soubory nebo jen na složky, musíme
+si vypomoci s find nebo možnostmi Bashe.
 
 .. code-block:: bash
 
@@ -285,11 +287,11 @@ Výchozí oprávnění -- umask
 
 Možná vás už napadlo, jaká oprávnění budou mít vytvářené soubory, když "nějaká" mít musí a vy jste
 je nemodifikovali (a většině případů ani asi nebudete). Obecná odpověď neexistuje, protože záleží na
-programu, kterým složky a soubory zakládáme, ale seznámíme s *většinou* platnými konvencemi.
+programu, kterým složky a soubory zakládáme, ale seznámíme se s *většinou* platnými konvencemi.
 
 Tradiční linuxové programy při vytváření souborů nastavují ``rw-rw-rw-`` ("dábělské" 666), a pro
 složky ``rwxrwxrwx`` ("andělské" 777). Takto vytvořené soubory jsou čitelné a zapisovatelné pro
-všechny, a složky plně přístupné taktéž pro všechny. Když vytvoříte soubor, tak ale tato oprávnění
+všechny a složky plně přístupné taktéž pro všechny. Když vytvoříme soubor, tak ale tato oprávnění
 (naštěstí) nemá::
 
 	$ touch soubor
@@ -298,14 +300,16 @@ všechny, a složky plně přístupné taktéž pro všechny. Když vytvoříte 
 
 .. rubric:: Hodnota umask
 
-Tradiční linuxové programy ctí hodnotu označovanou **umask** (user file creation mode mask), která se od těchto "plných" práv odečte. Hodnota umask se nastavuje stejnojmenným příkazem umask, ale specifikujeme práva, která mít nově vytvářené soubory a složky mít *nemají*.
+Tradiční linuxové programy ctí hodnotu označovanou **umask** (user file creation mode mask), která 
+se od těchto "plných" práv odečte. Hodnota umask se nastavuje stejnojmenným příkazem umask, ale specifikujeme práva, která mít nově vytvářené soubory a složky mít *nemají*.
 
 Umask bez parametrů hodnotu vypíše::
 
 	$ umask
 	0022
 
-Hodnotu umask získáme odečtení požadovaného oprávnění od 777, ale umask podporuje i symbolické zadávání i zobrazování ve stejném formátu jako chmod.
+Hodnotu umask získáme odečtením požadovaného oprávnění od 777, ale umask podporuje i symbolické 
+zadávání i zobrazování ve stejném formátu jako chmod.
 
 Pozor, že výstup ``umask -S`` jsou práva, která *mají být, nikoli nesmí být* nastavena::
 
@@ -315,7 +319,7 @@ Pozor, že výstup ``umask -S`` jsou práva, která *mají být, nikoli nesmí b
 .. rubric:: Nastavení hodnoty umask
 
 Při nastavování nového masky umask si musíme uvědomit, že platí až od této chvíle a pro procesy
-spuštěné ve stejném shellu). Při restartu nebo odhlášení se ztrácí a proto se umask nastavuje ve
+spuštěné ve stejném shellu. Při restartu nebo odhlášení se ztrácí a proto se umask nastavuje ve
 startovacích skriptech
 
 * např. ``~/.bashrc`` konkrétního uživatele
@@ -323,7 +327,7 @@ startovacích skriptech
 
 .. topic:: Pravidla určení výchozího oprávnění a vlastnictví
 
-   * nově vytvořený objekt patří uživateli, který ho vytvořil, a primární skupině tohoto uživatele
+   * nově vytvořený objekt patří uživateli, který ho vytvořil a primární skupině tohoto uživatele
    * nově vytvořený objekt má implicitně oprávnění určená příkazem umask
    * oprávnění může měnit vlastník objektu nebo správce systému (root)
    * vlastníka může měnit pouze root, v některých případech i majitel (za speciálních podmínek)
@@ -333,22 +337,22 @@ startovacích skriptech
    ovlivnění oprávnění ani vlastníka či skupiny. Naopak při kopírování patří kopie tomu, kdo si ji
    vytvořil. Při přesunu záleží na tom, jestli je potřeba vytvořit nový i-uzel (inode) (při přesunu
    mezi různými souborovými systémy jde vlastně o kopírování s následným smazáním originálu) nebo
-   nikoliv (jde vlastně o variantu přejmenování).
+   nikoli (jde vlastně o variantu přejmenování).
 
    (`Zdroj Wikipedia <http://cs.wikipedia.org/wiki/P%C5%99%C3%ADstupov%C3%A1_pr%C3%A1va_v_Unixu#Pravidla>`_)
 
 POSIX a ACL oprávnění
 =====================
 
-Právě vysvětlená oprávnění jsou označovány někdy jako *tradiční* nebo *POSIX* oprávnění. Vznikali v
-době, kdy autoři Unixu stáli před problémem vyřešit souborová oprávnění co nejjednodušeji, protože
-výkonnostní a paměťové limity počítačů bylo velmi nízko.
+Právě vysvětlená oprávnění jsou označována někdy jako *tradiční* nebo *POSIX* oprávnění. Vznikala v
+době, kdy autoři Unixu stáli před problémem vyřešit souborová oprávnění co nejjednoduššeji, protože
+výkonnostní a paměťové limity počítačů byly velmi nízko.
 
-Přesto je tento POSIX model oprávnění téměř vždycky vyhovující a proto masivně používaný dodnes.
+Přesto tento POSIX model oprávnění téměř vždy vyhovuje, a proto je hojně využíván dodnes.
 
 Nicméně jako alternativní k tomuto tradičnímu unixovému přístupu existují tzv. *ACL (Access Control
-List, seznam oprávnění) modely*, které jsou podobné např. oprávněním známé z Windows. Na diskovou
-položku nastavujete seznam oprávnění pro neomezený počet uživatelů a skupin jednotlivě.
+List, seznam oprávnění) modely*, které jsou podobné např. oprávněním známým z Windows. Na diskovou
+položku nastavujeme seznam oprávnění pro neomezený počet uživatelů a skupin jednotlivě.
 
 Vzhledem k velmi malému použití ACL oprávnění v praxi se tímto modelem nebudeme hlouběji zabývat.
 
