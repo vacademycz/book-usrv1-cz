@@ -146,7 +146,7 @@ seznamu teprve najdeme *Czech Republic*.
 Klávesnici můžete zvolit buď detekcí nebo vybráním ze seznamu. Při detekci jste vyzváni zadat
 určité neobvyklé znaky, podle kterých instalátor pozná, jaké rozvržení klávesnice očekáváte.
 
-Všechna tato nastavení se dají později kdykoli změnit.
+Všechna tato nastavení se dají kdykoli změnit.
 
 Uživatelé
 =========
@@ -254,7 +254,7 @@ V předposledním kroku instalace máme možnost nainstalovat skupiny programů 
 např. OpenSSH, Tomcat server, MySQL ap.
 
 Při prvním seznamování s Ubuntu doporučujeme této možnosti nevyužívat a raději si potřebný
-software nainstalovat manuálně krok za krokem, abyste se naučili postup instalace a konfigurace
+software nainstalovat manuálně krok za krokem, abysme se naučili postup instalace a konfigurace
 těchto programů.
 
 GRUB

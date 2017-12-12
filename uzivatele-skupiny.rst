@@ -10,11 +10,11 @@ Neomezenou mocí vládne superuživatel s uživatelským jménem root. Je to obd
 "Administrator" nebo "su" v jiných OS a softwarech.
 
 .. caution:: Možná by vás napadlo v rámci zvýšení bezpečnosti nebo "přizpůsobení" přejmenovat účet
-   root na "admin" nebo vytvořit nového superuživatele. To je sice technické proveditelná, ale
-   rozhodně nedoporučitelná myšlenka. Vytvoříte spíše nové zranitelnosti a kromě toho vás bude
+   root na "admin" nebo vytvořit nového superuživatele. To je sice technicky proveditelné, ale
+   rozhodně vám to nedoporučujeme. Vytvoříte spíše nové zranitelnosti a kromě toho vás bude
    proklínat každý, kdo po vás bude muset server spravovat.
 
-Root smí provádět provádět jakoukoli operaci, s jakýmkoli souborem nebo procesem kromě nesmyslných operací jako třeba spuštění souboru bez spustitelného bitu.
+Root smí provádět provádět jakoukoli operaci s jakýmkoli souborem nebo procesem kromě nesmyslných operací, jako třeba spuštění souboru bez spustitelného bitu.
 
 .. important:: Chtěli bychom vyzdvihnout slova *jakoukoli* a *jakýkoli*. Root v Linuxu je skutečně
    neomezený. Ne jako ve Windows, kdy jste sice administrátor, ale přesto nemůžete úplně svobodně
@@ -23,37 +23,37 @@ Root smí provádět provádět jakoukoli operaci, s jakýmkoli souborem nebo pr
 Ovšem i přes svoji privilegovanost je to pořád účet jako každý jiný a mohli byste se chtít na něj
 přihlásit a pracovat. Z důvodu naprosté neomezenosti tohoto účtu je to však nerozumné. Představte
 si, že se překlepnete a protože jste root, smažete důležité soubory nebo znefunkčníte systém.
-Některé distribuce jako Ubuntu vám to dokonce jednoduše vůbec neumožní.
+Některé distribuce jako Ubuntu vám to dokonce vůbec neumožní.
 
 su -- změna identity
 --------------------
 
-Ve všech systémech kromě Ubuntu je výše uvedený problém vyřešen programem ``su``. Když ho spustíte
+Ve všech systémech kromě Ubuntu je výše uvedený problém vyřešen programem ``su``. Když ho spustíme
 bez parametrů
 
 ::
 
 	$ su
 
-vyzve vás k zadání hesla roota a spustí shell (příkazovou řádku) s oprávněními roota.
+vyzve nás k zadání hesla roota a spustí shell (příkazovou řádku) s oprávněními roota.
 
 .. caution:: V Debianu se na účet roota přepnout můžete, ale i tak to nedoporučujeme.
 
-Můžete přepínat i na jiné identity, než roota.
+Můžeme přepínat i na jiné identity, než roota.
 
 ::
 
    $ su <uživatel>
 
-a zadáte heslo tohoto uživatele. Nebo se můžete přepnout nejprve na roota ``su`` a pak na
-konkrétního uživatele ``su <uživatel>`` a nebudete muset zadávat jeho heslo (root se může přepnout i
+a zadáte heslo tohoto uživatele. Nebo se můžeme přepnout nejprve na roota ``su`` a pak na
+konkrétního uživatele ``su <uživatel>`` a nebudeme muset zadávat jeho heslo (root se může přepnout i
 bez zadávání hesla daného uživatele).
 
 sudo -- vylepšený su v Ubuntu
 -----------------------------
 
-Jak jsme si řekli v Ubuntu se na roota nepřihlásíte (alespoň ve výchozím stavu). Znamená to, že
-Ubuntu roota nemá a jak lze v Ubuntu provést úkoly vyžadující superuživatele?
+Jak jsme si řekli, v Ubuntu se na roota nepřihlásíte (alespoň ve výchozím stavu). To ale neznamená,
+že Ubuntu roota nemá. Jak tedy v Ubuntu provést úkoly vyžadující superuživatele?
 
 Ubuntu uživatel root sice existuje, ale nemá žádné platné heslo. Tedy se na něj nikdy nemůžeme
 přihlásit či přepnout. Namísto "přepínání" se na roota (nebo na jiný účet) si jen "vypůjčíme"
@@ -76,15 +76,15 @@ Výhody řešení přes sudo:
 sudo -i
 ^^^^^^^
 
-Tímto parametrem otevřete root konzoli, abyste nemuseli stále opakovat před každým příkazem "sudo".
-Nevýhodou je však, že příkazy zadané v rámci nové konzole nejsou :ref:`zalogovány
+Tímto parametrem otevřeme root konzoli, abysme nemuseli stále opakovat před každým příkazem "sudo".
+Nevýhodou však je, že příkazy zadané v rámci nové konzole nejsou :ref:`zalogovány
 <var-log-auth.log>`.
 
 gksudo
 ^^^^^^
 
 Sudo se hodí pro spuštění s jinými oprávněními pouze pro textové (CLI) programy. Když chcete spustit
-jako root (nebo jiný uživatel) grafickou aplikaci (GUI) je vhodné použít variantu gksudo::
+jako root (nebo jiný uživatel) grafickou aplikaci (GUI), je vhodné použít variantu gksudo::
 
 	$ gksudo <program>
 
@@ -93,20 +93,21 @@ Nebo bez parametru ``gksudo`` můžete příkaz i identitu vybrat graficky.
 .. image:: img/gksudo.png
    :alt: Program gksudo bez parametrů
 
-Gksudo standardní součástí Ubuntu od verze 13.04. Doinstalovat gksudo můžete příkazem::
+Gksudo standardní součástí Ubuntu od verze 13.04. Doinstalovat gksudo můžeme příkazem::
 
 	$ sudo apt-get install gksu
 
-.. note:: Jestli náhodou používáte Kubuntu, tedy Ubuntu s KDE místo Gnome/Unity, pak se příkaz jmenuje ``kdesu``.
+.. note:: Jestli náhodou používáte Kubuntu, tedy Ubuntu s KDE místo Gnome/Unity, pak se příkaz
+   jmenuje ``kdesu``.
 
 .. _var-log-auth.log:
 
 Protokol /var/log/auth.log
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-V tomto souboru najdete zmíněnou historii příkazů provedených prostřednictvím sudo/gksudo.
+V tomto souboru najdeme zmíněnou historii příkazů provedených prostřednictvím sudo/gksudo.
 
-Zobrazit např. posledních 10 záznamů můžete pomocí::
+Zobrazit např. posledních 10 záznamů můžeme pomocí::
 
    $ tail /var/log/auth.log
 
@@ -127,9 +128,9 @@ Druhou nevýhodou může být obtížné :ref:`přesměrování výstupu <presme
 
    $ sudo cat /dev/null > /var/log/apache2/error.log
 
-narazíte na *Permission denied*. Ale jak to, když se má příkaz provádět s právy roota?! Důvod je v
+narazíme na *Permission denied*. Ale jak to, když se má příkaz provádět s právy roota?! Důvod je v
 tom, že se jen část před operátor ``>`` provede jako root. Přesměrování totiž spustí nový subshell,
-který již není "sudován". Celý příkaz musíte proto přepsat, aby se spustil naráz::
+který již není "sudován". Celý příkaz musíme proto přepsat, aby se spustil naráz::
 
 	$ sudo sh -c 'cat /dev/null > /var/log/apache2/error.log'
 
@@ -153,10 +154,10 @@ počítači.
    # Allow members of group sudo to execute any command
    %sudo   ALL=(ALL:ALL) ALL
 
-Pro jakoukoli jinou konfiguraci, než jen pouhé přidání mezi sudoery, je třeba soubor
-``/etc/sudoers`` editovat. Nikdo to ale nedělejte na přímo otevřením v editoru, ale pomocí programu
-``visudo``. Ten otevře konfigurační soubor v textovém editoru, zabezpečí, že jste jediný, kdo ho
-soubor bude v daný moment upravovat, a zejm. při ukončení editoru zkontroluje správnost syntaxe.
+Pro jakoukoli jinou konfiguraci, než jen pouhé přidání mezi sudoery, je třeba editovat soubor
+``/etc/sudoers``. Nikdy to ale nedělejte na přímo otevřením v editoru, ale pomocí programu
+``visudo``. Ten otevře konfigurační soubor v textovém editoru a zabezpečí, že jste jediný, kdo ho
+bude v daný moment upravovat, a zejm. při ukončení editoru zkontroluje správnost syntaxe.
 
 Uživatelé
 =========
@@ -169,7 +170,7 @@ Sami jistě správně odhadnete, že prvním lidským účtem je root (se který
 váš vlastní účet pro běžnou práci vytvořený během instalace.
 
 Na další účty sloužící démonům se nelze přihlásit. Mají velmi omezená práva specifická pro jakého
-démona mají sloužit. V Linuxu běžně každý démon běží pod přísně omezeným vyhrazeným účtem.
+démona mají sloužit. V Linuxu běžně každý démon běží pod přísně vyhrazeným a omezeným účtem.
 
 .. important:: Pamatujte, že téměř jakékoli změny uživatele, skupiny, členství ve skupinách a z
    nich vyplývajících oprávnění se projeví až při opětovném přihlášení.
@@ -187,7 +188,7 @@ uživatelů systému:
 * dodatečné údaje (občanské jméno, číslo kanceláře, ap.),
 * přihlašovací shell
 
-.. tip:: UID 0 je rezervování pro roota. UID 1-999 by měli být vyhrazeny pro démony. Teprve od UID
+.. tip:: UID 0 je rezervování pro roota. UID 1-999 by měly být vyhrazeny pro démony. Teprve od UID
    1000 by se mělo jedna o "lidské" účty.
 
 Jednotlivé záznamy na řádcích jsou oddělené dvojtečkou.
@@ -212,12 +213,12 @@ Jednotlivé záznamy na řádcích jsou oddělené dvojtečkou.
    lisa:x:1001:1001:Lisa Simpson,,,:/home/lisa:/bin/bash
 
 Možná jste zvedli obočí při informaci, že se v tomto souboru nachází heslo. To je a není pravda. V
-dřevních dobách Unixu, zde opravdu bylo heslo v čitelné podobě, ale později bylo ukládáno
+dřevních dobách Unixu, zde opravdu bylo heslo v čitelné podobě, ale později začalo být ukládáno
 zašifrovaně.
 
 .. rubric:: Stínová hesla
 
-V naší ukázce mají všichni uživatelé v poli hesla "x", což znamená, že jsou používaný tzv. *stínová hesla (shadow passwords)*, kdy je heslo uloženo v odděleném souboru ``/etc/shadow`` [#f1]_.
+V naší ukázce mají všichni uživatelé v poli hesla "x", což znamená, že jsou používána tzv. *stínová hesla (shadow passwords)*, kdy je heslo uloženo v odděleném souboru ``/etc/shadow`` [#f1]_.
 
 Na rozdíl od ``/etc/passwd`` není tento soubor veřejně dostupný::
 
@@ -249,7 +250,7 @@ jaké bylo původní heslo. Hash je znovu vypočten při přihlašování a poro
 .. note:: Konkrétní hešovací algoritmus se liší. Tradiční DES a MD5 postupně nahrazuje např.
    bezpečnější SHA-512, které používá i Ubuntu.
 
-Pokud zde není hash, ale ``!`` nebo ``*``, pak je znemožněné se tímto účtem přihlásit. Vykřičník
+Pokud zde není hash, ale ``!`` nebo ``*``, pak je znemožněno se tímto účtem přihlásit. Vykřičník
 před hashem znamená zamčený účet (taktéž se není možné přihlásit).
 
 Je-li zde prázdný řetězec, považuje se to za prázdné heslo (bez heslo), ale ne všechny aplikace jsou
@@ -260,8 +261,8 @@ Další pole souboru ``/etc/shadow`` jsou (rovněž oddělené dvojtečkou):
 * datum poslední změny hesla
 * minimální počet dní mezi změnami hesla
 * maximální počet dní mezi změnami hesla
-* počet dní předem varování, že si musíte změnit heslo
-* počet dní po vypršení hesla po kterých bude účet zablokován
+* počet dní předem varování, že si musíme heslo změnit
+* počet dní po vypršení hesla, po kterých bude účet zablokován
 * datum vypršení hesla
 * poslední pole je rezervováno pro budoucí využití
 
@@ -270,7 +271,8 @@ Datumy se uvádějí jako počet dní od 1. ledna 1970.
 Vytvoření uživatele -- adduser
 ------------------------------
 
-Na základě předchozích znalostí byste uměli založit uživatele manuálně, ale jistější a pohodlnější způsob je použít ``adduser <uživatel>``, postupně odpovědět na otázky programu a na konec potvrdit správnost :kbd:`Y` (Yes)::
+Na základě předchozích znalostí bysme uměli umět založit uživatele manuálně, ale jistější a
+pohodlnější způsob je použít ``adduser <uživatel>``, postupně odpovědět na otázky programu a nakonec potvrdit správnost :kbd:`Y` (Yes)::
 
 	$ sudo adduser lisa
 	Adding user `lisa' ...
@@ -289,18 +291,18 @@ Na základě předchozích znalostí byste uměli založit uživatele manuálně
 	Other []:
 	Is the information correct? [Y/n] y
 
-.. important:: V jiných systémech stejnou práci obstrarává ``useradd``. I když je tento skript také
-   existuje v Ubuntu/Debian, zde preferujte vždy ``adduser``.
+.. important:: V jiných systémech stejnou práci obstarává ``useradd``. I když tento skript také
+   existuje v Ubuntu/Debian, preferujeme vždy ``adduser``.
 
 Přejmenování uživatele
 ----------------------
 
-Když dojde k nutnosti přejmenovat uživatele (např. z důvodu svatby) použijte jednu z mnoha funkcí
+Když dojde k nutnosti přejmenovat uživatele (např. z důvodu svatby) použijeme jednu z mnoha funkcí
 programu ``usermod``::
 
 	$ sudo usermod -l <nový-username> <současný-username>
 
-Pozor na to, že domovská složka zůstane stále stejná. Musíte ji přejmenovat ručně a upravit v ``/etc/passwd``.
+Pozor na to, že domovská složka zůstane stále stejná. Musíme ji přejmenovat ručně a upravit v ``/etc/passwd``.
 
 
 Zjištění identity uživatele -- id, whoami
@@ -325,8 +327,8 @@ Skript vymaže uživatele (z ``/etc/passwd`` a ``/etc/shadow``), ale **nevymaže
 
 Soubory uživatele je před odstraněním vhodné zazálohovat do :ref:`zkomprimovaného archívu <archivy-komprimace>` parametrem ``--backup``, který vytvoří v aktuální složce soubor ``<uživatelské_jméno>.tar.gz``.
 
-.. important:: V jiných systémech stejnou práci zařizuje ``userdel``. I když je tento skript také
-   existuje v Ubuntu/Debian, zde preferujte vždy ``deluser``.
+.. important:: V jiných systémech stejnou práci zařizuje ``userdel``. I když tento skript existuje
+také v Ubuntu/Debian, zde preferujeme vždy ``deluser``.
 
 .. todo:: Přidat odkaz do II do SSH s textem "Přestože SSH popisujeme v ____pokračování___ této
    příručky, zmínímě důležitý aspekt..."
@@ -334,10 +336,10 @@ Soubory uživatele je před odstraněním vhodné zazálohovat do :ref:`zkomprim
 .. topic:: Smazání uživatele a SSH přístup
 
    Vymazání uživatele nebo jen jeho uzamčení se nevztahuje na další způsoby přihlašování, zejm.
-   SSH! Pokud má uživatel přístup přes SSH s veřejným klíčem, může si nadále přihlásit. Proto
+   SSH! Pokud má uživatel přístup přes SSH s veřejným klíčem, může se nadále přihlásit. Proto
 
-   1. smažte jeho domovskou složku nebo jen soubor ``~/.ssh/authorized_keys``.
-   2. ukončete všechny existující SSH spojení daného uživatele.
+   1. smažeme jeho domovskou složku nebo jen soubor ``~/.ssh/authorized_keys``.
+   2. ukončíme všechny existující SSH spojení daného uživatele.
 
    Lepším řešením je však omezit přístup přes SSH na skupinu např. ``sshlogin``, přidat tuto
    skupinu pomocí ``AllowGroups`` v ``/etc/ssh/sshd_config``. Následně postačí jen uživatele ze
@@ -363,7 +365,7 @@ Jednotlivá pole oddělená dvojtečkou mají tento význam:
 * group ID (GID) číslo skupiny
 * členové skupiny oddělené čárkou
 
-.. warning:: Členy skupiny jsou oddělené opravdu jen čárkou ("joe,lisa"), nikoli čárkou a mezerou
+.. warning:: Členové skupiny jsou odděleni opravdu jen čárkou ("joe,lisa"), nikoli čárkou a mezerou
    ("joe, lisa")!
 
 .. code-block:: none
@@ -383,22 +385,23 @@ Jednotlivá pole oddělená dvojtečkou mají tento význam:
    joe:x:1000
    lisa:x:1001:
 
-.. note:: Skupina může mít heslo (když se přepínáte na skupinu programem ``newgrp``), ale využití v   praxi této možnosti a tím pádem i hesla skupiny je téměř nulové. Pro hesla skupin existuje
-   podobný mechanizmus stínovým heslům v souboru ``/etc/gshadow``, kde je většinou nastaveno ``*``,
+.. note:: Skupina může mít heslo (když se přepínáme na skupinu programem ``newgrp``), ale využití
+   této možnosti v praxi a tím pádem i hesla skupiny je téměř nulové. Pro hesla skupin existuje
+   mechanizmus podobný stínovým heslům v souboru ``/etc/gshadow``, kde je většinou nastaveno ``*``,
    tj. "nelze se přihlásit".
 
 Primární a sekundární členství
 ------------------------------
 
-Možná jste si povšimli po vytvoření uživatele kontrolou souborů ``/etc/passwd`` a ``/etc/group``, že
-zde byla vytvořena skupina se stejným názvem jako uživatele. Tato skupina se jmenuje *primární (či
-osobní) skupina* a právě založený uživatel je jejím jediným členem.
+Možná jste si při kontrole souborů ``/etc/passwd`` a ``/etc/group`` po vytvoření uživatele povšimli,
+že zde byla vytvořena skupina se stejným názvem, jako je název uživatele. Tato skupina se jmenuje *primární (či osobní) skupina* a právě založený uživatel je jejím jediným členem.
 
 Uživatel má svou primární skupinu uvedenou přímo v ``/etc/passwd`` jako číselné GID (může zde být
 uvedena jen jediná skupina pomocí GID). Čerstvě po vytvoření uživatele nemá tato skupina žádné další
 členy v ``/etc/groups``.
 
-Naproti tomu členové uvedení v ``/etc/groups`` mohou nazývat takovou skupinu jako *sekundární (secondary nebo supplementary)*.
+Naproti tomu členové uvedení v ``/etc/groups`` mohou nazývat takovou skupinu jako *sekundární
+(secondary nebo supplementary)*.
 
 .. figure:: img/primary-secondary-group.png
 
@@ -462,15 +465,15 @@ Odstranění uživatele ze skupiny
 Externí databáze - LDAP, NIS
 ============================
 
-Všechny doposud popsané informace o platili pouze lokálně, tj. účty a skupiny existují výhradně na
-místním počítači a není způsob, jak by mohl stejný účet nebo skupina existovat, ověřovat se stejným
-heslem a sdílet oprávnění na více počítačích stejné sítě.
+Všechny doposud popsané informace platily pouze lokálně, tj. účty a skupiny existují výhradně na
+místním počítači a není způsob, jak by mohl stejný účet nebo skupina existovat či se ověřovat se
+stejným heslem a sdílet oprávnění na více počítačích stejné sítě.
 
 K dosažení skutečně sdíleného účtování je potřeba začít používat systémy jako LDAP nebo NIS, které
 přesouvají konfiguraci na externí centrální databáze a jednotlivé stroje jsou klienty tohoto
 centrálního serveru.
 
-Vzhledem k značné rozsáhlosti a faktu, že většina studentů bude spravovat maximálně jednotky
+Vzhledem ke značné rozsáhlosti a faktu, že většina studentů bude spravovat maximálně jednotky
 instalací se nebudeme LDAP a NIS zabývat.
 
 Správa hesel
@@ -492,7 +495,7 @@ Správce jinému uživateli::
 
 	$ sudo passwd <uživatel>
 
-.. Q: Passwd musí modifikovat /etc/passwd, resp. /etc/shadow. Jak to že to tento programů může
+.. Q: Passwd musí modifikovat /etc/passwd, resp. /etc/shadow. Jak to, že to tento program může
    provést, když běžný uživatel nemůže např. /etc/shadow ani zobrazit?
 
 Zamčení účtu
@@ -512,16 +515,17 @@ Odemčení ``-u`` (unlock)::
 Politika hesel
 --------------
 
-Správná hesla by měli odpovídat zabezpečovanému systému. Můžete proto vyžadovat určitou minimální
+Správná hesla by měla odpovídat zabezpečovanému systému. Můžete proto vyžadovat určitou minimální
 délku, složitost, neopakování hesel, nebo časově omezená hesla (expirace).
 
 .. rubric:: PAM
 
-Toto všechno je možné pomocí tzv. PAM (PAssword Management) modulu, který je konfigurován pomocí souborů v ``/etc/pam.d/`` složce. Zmíněná minimální délka hesla se např. nastavuje v souboru ``/etc/pam.d/common-password``.
+Toto všechno je možné pomocí tzv. PAM (PAssword Management) modulu, který je konfigurován pomocí
+souborů v ``/etc/pam.d/`` složce. Zmíněná minimální délka hesla se např. nastavuje v souboru ``/etc/pam.d/common-password``.
 
 .. rubric:: Expirace hesla
 
-Aktuální stav vypršení hesla zjistíte ``sudo chage -l <uživatel>``. Bez parametru ``sudo chage <uživatel>`` budete postupně dotazování na jednotlivá nastavení..
+Aktuální dobu do vypršení hesla zjistíte ``sudo chage -l <uživatel>``. Bez parametru ``sudo chage <uživatel>`` budete postupně dotazování na jednotlivá nastavení..
 
 .. rubric:: Poznámky
 

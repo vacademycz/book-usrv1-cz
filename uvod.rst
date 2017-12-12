@@ -13,8 +13,8 @@ Edice *Ubuntu Server* standardně neobsahuje grafické rozhraní, ale neliší s
 *Ubuntu Desktop*. Instalátor Ubuntu Server je rovněž textový, ale také velmi podobný tomu
 grafickému.
 
-Většina informací v příručce předpokládá přítomnost pouze textového prostředí. Čas od času zmíníme i
-grafickou alternativu.
+Většina informací v příručce předpokládá přítomnost pouze textového prostředí. Čas od času zmíníme 
+i grafickou alternativu.
 
 Vzhledem k blízké příbuznosti mezi Ubuntu a Debian je příručka téměř bez výjimky **platná i pro
 distribuci Debian**. Těch několik rozdílů mezi těmito systémy vždy zdůrazníme. Kromě Ubuntu a 
@@ -69,10 +69,10 @@ podobě menší "uhlazenosti" a přehlednosti a někdy i stability kódu.
 Ubuntu
 ------
 
-Dlouhodobě nejrozšířenější distribuce je Ubuntu, na které se tento kurz především zaměřuje. Důvodem
+Dlouhodobě nejrozšířenější distribucí je Ubuntu, na které se tento kurz především zaměřuje. Důvodem
 masivního úspěchu je snadnost použití, perfektní podpora HW (většina HW funguje bez instalace
-dodatečných ovladačů) a spolupráce s řadou výrobců (nejznámější partnerství je s Dell). S
-rozšířeností souvisí i komunita, která čítá tisíce nadšených dobrovolníků, kteří o Ubuntu píší a
+dodatečných ovladačů) a spolupráce s řadou výrobců (nejznámější partnerství je s Dell). 
+S rozšířeností souvisí i komunita, která čítá tisíce nadšených dobrovolníků, kteří o Ubuntu píší a
 diskutují, a tak je pravděpodobnost, že jste první s určitým problémem, téměř nulová.
 
 .. rubric:: Verzování
@@ -96,7 +96,7 @@ Mark byl známou osobní již dříve, a to díky založení společnosti Thawte
 později výhodně prodal. Nejznámější je však Mark jako historicky druhý vesmírný turista, který se
 podíval na Měsíc.
 
-Slovo Ubuntu znamená v jazyku jihoafrického kmene Zulu "lidskost ostatním" nebo jen "lidskost".
+Slovo Ubuntu znamená v jazyce jihoafrického kmene Zulu "lidskost ostatním" nebo jen "lidskost".
 Název vybral zakladatel Mark Shuttleworth, který je původem právě z Jihoafrické republiky.
 
 .. rubric:: Deriváty
@@ -116,7 +116,7 @@ Každá verze Ubuntu je k dispozici také v "edici" Server. Ubuntu Server vychá
 
 Má k dispozici stejné APT repozitáře, ale odlišnost spočívá zvláště v nepřítomnosti grafického
 prostředí a tím souvisejícího GUI software. Také se trochu jinak instaluje, avšak jádro používá
-stejné jako desktop edice.
+stejné jako desktopové edice.
 
 Ubuntu Desktop lze použít i pro serverové nasazení, ale Server edice bude fungovat rychleji, je
 štíhlejší a sami postupně přijdete na to, že grafické prostředí ke správě nepotřebujete.
@@ -136,18 +136,18 @@ Debian
 ------
 
 Debian a Ubuntu mají mnoho společného. Ubuntu vzniklo právě jako odštěpek (fork) od Debianu. Debian
-je však přísně nekomerční, vyvíjená výhradně komunitou GNU okolo Free Software Foundation a
+je však přísně nekomerční, vyvíjený výhradně komunitou GNU okolo Free Software Foundation a
 nadšenci. Dokonce jako jediná distribuce se oficiálně pyšní přídomkem "GNU/Linux".
 
 Také název Debian má svůj romantický původ. Původní zakladatel Ian Murdock, tehdy student americké
 Purdue University, pojmenoval projekt podle kombinace jména své přítelkyně Debra a svého Ian.
 
-Debian je znám svou konzervativností. Verze nejsou vydávány tak často jako Ubuntu a neobsahuje vždy
+Debian je znám svou konzervativností. Verze nejsou vydávány tak často jako Ubuntu a neobsahují vždy
 nejnovější verze software, ale na druhou stranu je Debian považován za velmi spolehlivý a odladěný
 systém.
 
 Jako jediná masivně rozšířená distribuce za sebou nemá velkou firmu. Téměř celý systém je skutečně
-vyvíjen komunitou nadšených talentovaných lidí.
+vyvíjen komunitou nadšených a talentovaných lidí.
 
 Ubuntu využívá systém balíčků a software původně navržený pro Debian, ale poslední dobou najdeme i
 obrácený směr symbiózy - technologie z Ubuntu se dostávají do Debianu.
@@ -184,9 +184,9 @@ máte znalosti Linuxu a jaká další kritéria posuzujete (stabilita, rozšíř
 Myslíme si však, že Ubuntu má pozici nejrozšířenější linuxové distribuce oprávněně. A to vzhledem k
 poměru ceny (zadarmo), funkčnosti a snadnosti použití.
 
-Líbí se nám, že na rozdíl od Red Hat a SUSE můžete vytvořit jakoukoli infrastrukturu bez ohledu na
-váš rozpočet. Oproti Debianu považujeme za výhodu větší komunitu, lepší podporu hardware a pro
-kritické nasazení můžete přikoupit `podporu od výrobce Ubuntu Advantage 
+Líbí se nám, že na rozdíl od Red Hat a SUSE můžeme vytvořit jakoukoli infrastrukturu bez ohledu na
+náš rozpočet. Oproti Debianu považujeme za výhodu větší komunitu, lepší podporu hardware a pro
+kritické nasazení můžeme přikoupit `podporu od výrobce Ubuntu Advantage 
 <https://www.ubuntu.com/support/plans-and-pricing>`_.
 
 Knihy a weby
