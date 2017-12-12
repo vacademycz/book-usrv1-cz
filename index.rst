@@ -30,6 +30,7 @@ odkazem.
 .. toctree::
    :maxdepth: 2
    :caption: Obsah:
+   :numbered:
 
    uvod
    instalace
