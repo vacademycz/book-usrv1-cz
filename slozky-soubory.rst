@@ -2,7 +2,8 @@ Složky a soubory
 ****************
 
 Nejprve si projdeme tím, jak vypadá organizace linuxového disku, nejdůležitější složky, soubory a 
-jaký je jejich význam. Ve druhé, veskrze praktické části, budeme soubory a složky vytvářet, mazat, archivovat, přesouvat ap.
+jaký je jejich význam. Ve druhé, veskrze praktické části, budeme soubory a složky vytvářet, mazat,
+archivovat, přesouvat ap.
 
 Hlavní odlišnosti Linuxu
 ========================
@@ -85,9 +86,9 @@ Nejdůležitější složky stromu jsou následující:
   * ``/usr/`` -- uživatelské programy, neboli většinou software, instalovaný dodatečně, po skončení
     instalace.
 
-   * ``/bin/`` -- v případě GUI systému jsou zde převážně grafické programy.
-   * ``/lib/`` -- sdílené knihovny uživatelských programů
-   * ``/share/doc/`` -- dokumentace programů (README, návody ap.) a manuálové stránky. V době před
+    * ``/bin/`` -- v případě GUI systému jsou zde převážně grafické programy.
+    * ``/lib/`` -- sdílené knihovny uživatelských programů
+    * ``/share/doc/`` -- dokumentace programů (README, návody ap.) a manuálové stránky. V době před
      Googlem se hledali informace právě zde :-)
 
   * ``/var/`` -- data aplikací. Asi nejdůležitější složka pro zálohy. Jsou zde data všech
@@ -107,7 +108,8 @@ Relativní a absolutní cesta
 
 Napíšte-li např. ``cd acc/2014/`` může to znamenat skok do ``/home/joe/acc/2014/``, 
 ``/home/lisa/Documents/acc/2014/``, ``/var/backups/acc/2014/`` atd. v závislosti na tom jaká byla
-aktuální složka v době provádění ``cd``. Takto napsaná cesta bez počátečního ``/`` je **relativní**, tedy vyhodnocuje se podle místa, kde jste byli na začátku.
+aktuální složka v době provádění ``cd``. Takto napsaná cesta bez počátečního ``/`` je **relativní**,
+tedy vyhodnocuje se podle místa, kde jste byli na začátku.
 
 V relativní cestě můžeme použít symbolické složky ``..`` pro nadřazenou složku a ``.`` pro aktuální
 složku. Např. cesta ``../../acc/2014/`` vede do ``/acc/2014/`` ve složce o dvě výš, než aktuální.
@@ -246,7 +248,7 @@ Pevné i symbolické linky uvidíte ve výpisu ``ls -l`` jako šipky na originá
 	lrwxrwxrwx 1 root root  27 úno  5 12:12 K20speech-dispatcher -> ../init.d/speech-dispatcher
 	...
 
-.. todo: Jak od sebe poznat v "ls -l" symbolické a pevné linky? Jen symlinky maj šipky. Hardlink
+.. todo:: Jak od sebe poznat v "ls -l" symbolické a pevné linky? Jen symlinky maj šipky. Hardlink
    lze poznat jen tím, že na něj ukazuje více inodů (druhý sloupec).
 
 Vyhledávání
@@ -335,9 +337,10 @@ Méně se můžete setkat s komprimovanými soubory ``.bz2``, které mají lepš
 
 Tradičním unixovým programem pro archivaci je **tar** (tape archiver), který dnes samozřejmě 
 používáme s běžnými soubory na disku místo s páskovými mechanikami. Obvyklou příponou je 
-``.tar``. Tar však umí v jednom kroku soubory zkomprimovat i zaarchivovat (a obráceně). Takové soubory mají příponu ``.tar.gz``, ``.tgz`` pro tar+gz, resp. ``.tar.bz2`` pro tar+bzip2.
+``.tar``. Tar však umí v jednom kroku soubory zkomprimovat i zaarchivovat (a obráceně). Takové
+soubory mají příponu ``.tar.gz``, ``.tgz`` pro tar+gz, resp. ``.tar.bz2`` pro tar+bzip2.
 
-Časté volby taru jsou:
+Časté volby pro tar jsou:
 
 * ``v`` (verbose) -– činnost vypisovat na obrazovku
 * ``z`` -– použít komprimaci/dekomprimaci gzip

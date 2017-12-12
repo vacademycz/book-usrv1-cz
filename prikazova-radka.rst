@@ -118,7 +118,7 @@ následující text (bez počátečního ``$`` a mezery) a pak odešlete :kbd:`E
 
     $ nano .bashrc
 
-.. important: Od této chvíle dál bude cokoli, co máte napsat na prompt, začínat znakem dolar. Ten
+.. important:: Od této chvíle dál bude cokoli, co máte napsat na prompt, začínat znakem dolar. Ten
    však ale nepíšete - jen reprezentuje, že "zde" je prompt.
 
 Otevřete soubor ``.bashrc`` v textovém editoru nano. Tento soubor je jedním z konfiguračních souborů
@@ -365,11 +365,12 @@ Důležité parametry:
 * ``-c`` – zobrazit číslo řádku a sloupce v zápatí obrazovky, zobrazit číslo řádku na začátku nano
   neumí
 * ``-$`` – zalamovat dlouhé řádky (wrap). Protože $ znamená proměnnou shellu, **musíme parametr 
-uvést vždy jako poslední!**
+  uvést vždy jako poslední!**
 
 .. rubric:: vim a emacs
 
-Mezi další tradiční editory v Linuxu a Unixu patří vim (vi iMproved) a emacs, ale jejich ovládání rozhodně není ani snadné, ani intuitivní. 
+Mezi další tradiční editory v Linuxu a Unixu patří vim (vi iMproved) a emacs, ale jejich ovládání
+rozhodně není ani snadné, ani intuitivní.
 
 Zájemce o Emacs odkazujeme internet.
 

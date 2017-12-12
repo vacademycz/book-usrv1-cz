@@ -242,7 +242,8 @@ na zadané složce, všech podsložkách a souborech v ní::
 
 	$ chmod -R 400 slozka/
 
-.. note:: Pozor na záměnu ``-R`` a ``-r``. Velké "R" muselo být zvoleno, protože "r" je interpretováno jako právo read.
+.. note:: Pozor na záměnu ``-R`` a ``-r``. Velké "R" muselo být zvoleno, protože "r" je
+   interpretováno jako právo read.
 
 Rekurzivně pracující chmod nastavuje zadané oprávnění na dceřiné soubory i složky. To ale není vždy 
 to, co chceme. Pokud potřebujeme nastavit rekurzivně, ale jen na soubory nebo jen na složky, musíme
@@ -301,7 +302,8 @@ všechny a složky plně přístupné taktéž pro všechny. Když vytvoříme s
 .. rubric:: Hodnota umask
 
 Tradiční linuxové programy ctí hodnotu označovanou **umask** (user file creation mode mask), která 
-se od těchto "plných" práv odečte. Hodnota umask se nastavuje stejnojmenným příkazem umask, ale specifikujeme práva, která mít nově vytvářené soubory a složky mít *nemají*.
+se od těchto "plných" práv odečte. Hodnota umask se nastavuje stejnojmenným příkazem umask, ale
+specifikujeme práva, která mít nově vytvářené soubory a složky mít *nemají*.
 
 Umask bez parametrů hodnotu vypíše::
 

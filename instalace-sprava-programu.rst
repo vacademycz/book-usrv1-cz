@@ -47,9 +47,12 @@ Když už kompilovat musíme, popišme, alespoň velmi stručně jak na to. Vět
 používá GNU auto-tools se kterým má instalace ze zdrojáků tři kroky
 
 1. *"configure"* (příkaz ``./configure [--volby...]``) -- ověření, že jsou dostupné všechny potřebné
-   závislosti, konfigurace přes kompilace a výsledného programu. Můžete zkusit ``./configure --help`` pro zjištění všech sestavovacích a instalačních voleb.
+   závislosti, konfigurace přes kompilace a výsledného programu. Můžete zkusit ``./configure --help``
+   pro zjištění všech sestavovacích a instalačních voleb.
 2. *"make"* (příkaz ``make``) -- samotná kompilace
-3. *"make install"* (příkaz ``checkinstall``) -- dnes je posledním krokem spíše `checkinstall`, ale ``make install`` je tak hluboko zakořeněn, že této fázi budeme takto říkat. Checkinstall vytváří DEB balíček (viz dále).
+3. *"make install"* (příkaz ``checkinstall``) -- dnes je posledním krokem spíše `checkinstall`, ale
+   ``make install`` je tak hluboko zakořeněn, že této fázi budeme takto říkat. Checkinstall vytváří
+   DEB balíček (viz dále).
 
 Více informací najdete např. na https://help.ubuntu.com/community/CompilingSoftware.
 
@@ -130,7 +133,6 @@ zejm.
 Příklad instalace a odinstalace (s ponecháním konf. souborů)::
 
 	$ sudo dpkg -i super-aplikace.deb
-	$ sudo dpkg -r super-aplikace.deb
 
 Úprava konfigurace -- dpkg-reconfigure
 --------------------------------------
@@ -199,7 +201,9 @@ Odstranění včetně konfiguračních souborů::
 
 	$ sudo apt-get purge balíček [balíček2...]
 
-Pro povýšení na novější verzi nebo po přidání nového repozitáře do ``/etc/apt/sources.list`` (viz dále) musíme obnovit lokální cache podle skutečného stavu repozitářů. Příkazy proto budou dva - obnova cache volbou ``update``, a pak samotná instalace::
+Pro povýšení na novější verzi nebo po přidání nového repozitáře do ``/etc/apt/sources.list``
+(viz dále) musíme obnovit lokální cache podle skutečného stavu repozitářů. Příkazy proto budou dva -
+obnova cache volbou ``update``, a pak samotná instalace::
 
 	$ sudo apt-get update
 	$ sudo apt-get install balíček [balíček2...]
@@ -224,10 +228,12 @@ Repozitář pod lupou
 Repozitář je místo v lokální síti nebo internetu dostupné pod URL, která je známá programům pro
 správu repozitářů jako APT (viz dále).
 
-Repozitáře jsou konfigurovány textovými soubory v ``/etc/apt/``, z nichž nejdůležitější je ``/etc/apt/sources.list`` obsahující údaje o
+Repozitáře jsou konfigurovány textovými soubory v ``/etc/apt/``, z nichž nejdůležitější je
+``/etc/apt/sources.list`` obsahující údaje o
 
 * typu balíčku (je vždy ``deb`` nebo ``deb-src`` pro zdrojové balíčky)
-* URL HTTP nebo FTP v internetu či intranetu, ale i na CD-ROM. URL většinou směřuje na lokální obraz (mirror) download serveru pro váš stát
+* URL HTTP nebo FTP v internetu či intranetu, ale i na CD-ROM. URL většinou směřuje na lokální obraz
+  (mirror) download serveru pro váš stát
 * označení pro jakou verzi vaší distribuce jsou balíčky určeny
 
 .. code-block:: none
@@ -251,7 +257,8 @@ repozitáře.
 Připomínáme, že jakmile upravíte ``sources.list``, musíte provést ``sudo apt-get update`` pro obnovu
 informací o balíčcích v cache.
 
-.. tip:: Jednoduše procházet a vyhledávat můžete standardní repozitáře distribuce také přes web na http://packages.ubuntu.com, resp. http://packages.debian.org.
+.. tip:: Jednoduše procházet a vyhledávat můžete standardní repozitáře distribuce také přes web na
+   http://packages.ubuntu.com, resp. http://packages.debian.org.
 
 Další programy pro repozitáře
 =============================
@@ -277,7 +284,8 @@ Grafické Ubuntu Desktop obsahuje repozitářového klienta Ubuntu Software Cent
 Aptitude
 --------
 
-Pro textové rozhraní ještě doporučujeme doinstalovat Aptitude, který by se dal přirovnat k Ubuntu Software Center a control panelu Software & Updates::
+Pro textové rozhraní ještě doporučujeme doinstalovat Aptitude, který by se dal přirovnat k Ubuntu
+Software Center a control panelu Software & Updates::
 
 	$ sudo apt-get install aptitude
 	$ aptitude
@@ -289,7 +297,7 @@ apt-get.
 
    Aptitude správce balíčků a repozitářů
 
-.. todo: PPA archívy a Snapy
+.. todo:: PPA archívy a Snapy
 
 .. _rpm:
 
@@ -317,4 +325,4 @@ Jako nízkoúrovňový ekvivalent dpkg pro RPM systémy slouží program yum::
 
 	$ yum install super-aplikace
 
-.. todo: Aktualizovat o informaci o dnf, který nahradil yum, a od jaké verze Fedory.
+.. todo:: Aktualizovat o informaci o dnf, který nahradil yum, a od jaké verze Fedory.

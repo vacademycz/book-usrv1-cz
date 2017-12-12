@@ -14,7 +14,8 @@ Neomezenou mocí vládne superuživatel s uživatelským jménem root. Je to obd
    rozhodně vám to nedoporučujeme. Vytvoříte spíše nové zranitelnosti a kromě toho vás bude
    proklínat každý, kdo po vás bude muset server spravovat.
 
-Root smí provádět provádět jakoukoli operaci s jakýmkoli souborem nebo procesem kromě nesmyslných operací, jako třeba spuštění souboru bez spustitelného bitu.
+Root smí provádět provádět jakoukoli operaci s jakýmkoli souborem nebo procesem kromě nesmyslných
+operací, jako třeba spuštění souboru bez spustitelného bitu.
 
 .. important:: Chtěli bychom vyzdvihnout slova *jakoukoli* a *jakýkoli*. Root v Linuxu je skutečně
    neomezený. Ne jako ve Windows, kdy jste sice administrátor, ale přesto nemůžete úplně svobodně
@@ -120,7 +121,9 @@ Nevýhoda sudo přístupu je, že prolomení bezpečnosti "běžného" účtu s 
 mít stejný dopad jako prolomení účtu samotného roota. Dělat se s ním nedá nic kromě navádění
 uživatelů sudo k ochraně účtu stejně jako by se jednalo o účet superuživatele.
 
-Druhou nevýhodou může být obtížné :ref:`přesměrování výstupu <presmerovani>` výstupu "sudovaného" programu pomocí operátorů např. ``>``, ``>>``, ``|``. Např. když zkusíte vymazat ``error.log`` pomocí "černé díry" ``/dev/null``:
+Druhou nevýhodou může být obtížné :ref:`přesměrování výstupu <presmerovani>` výstupu "sudovaného"
+programu pomocí operátorů např. ``>``, ``>>``, ``|``. Např. když zkusíte vymazat ``error.log``
+pomocí "černé díry" ``/dev/null``:
 
 .. todo:: odkaz na kapitolu ve dvojce o /dev/null
 
@@ -218,7 +221,8 @@ zašifrovaně.
 
 .. rubric:: Stínová hesla
 
-V naší ukázce mají všichni uživatelé v poli hesla "x", což znamená, že jsou používána tzv. *stínová hesla (shadow passwords)*, kdy je heslo uloženo v odděleném souboru ``/etc/shadow`` [#f1]_.
+V naší ukázce mají všichni uživatelé v poli hesla "x", což znamená, že jsou používána tzv.
+*stínová hesla (shadow passwords)*, kdy je heslo uloženo v odděleném souboru ``/etc/shadow`` [#f1]_.
 
 Na rozdíl od ``/etc/passwd`` není tento soubor veřejně dostupný::
 
@@ -272,7 +276,8 @@ Vytvoření uživatele -- adduser
 ------------------------------
 
 Na základě předchozích znalostí bysme uměli umět založit uživatele manuálně, ale jistější a
-pohodlnější způsob je použít ``adduser <uživatel>``, postupně odpovědět na otázky programu a nakonec potvrdit správnost :kbd:`Y` (Yes)::
+pohodlnější způsob je použít ``adduser <uživatel>``, postupně odpovědět na otázky programu a nakonec
+potvrdit správnost :kbd:`Y` (Yes)::
 
 	$ sudo adduser lisa
 	Adding user `lisa' ...
@@ -302,7 +307,8 @@ programu ``usermod``::
 
 	$ sudo usermod -l <nový-username> <současný-username>
 
-Pozor na to, že domovská složka zůstane stále stejná. Musíme ji přejmenovat ručně a upravit v ``/etc/passwd``.
+Pozor na to, že domovská složka zůstane stále stejná. Musíme ji přejmenovat ručně a upravit v
+``/etc/passwd``.
 
 
 Zjištění identity uživatele -- id, whoami
@@ -319,16 +325,19 @@ Smazání je opět možné provést ručně, ale rychlejším způsobem je využ
 
  	$ sudo deluser lisa
 
-Skript vymaže uživatele (z ``/etc/passwd`` a ``/etc/shadow``), ale **nevymaže domovskou složku, mail spool a soubory vlastněné uživatelem.**. Připojte parametr
+Skript vymaže uživatele (z ``/etc/passwd`` a ``/etc/shadow``), ale **nevymaže domovskou složku, mail
+spool a soubory vlastněné uživatelem.**. Připojte parametr
 
 * ``--remove-home`` pro odstranění domovské složky
 * ``--remove-all-files`` pro odstranění všech souborů vlastněných uživatelem (tedy i domovské
   složky)
 
-Soubory uživatele je před odstraněním vhodné zazálohovat do :ref:`zkomprimovaného archívu <archivy-komprimace>` parametrem ``--backup``, který vytvoří v aktuální složce soubor ``<uživatelské_jméno>.tar.gz``.
+Soubory uživatele je před odstraněním vhodné zazálohovat do
+:ref:`zkomprimovaného archívu <archivy-komprimace>` parametrem ``--backup``, který vytvoří v
+aktuální složce soubor ``<uživatelské_jméno>.tar.gz``.
 
 .. important:: V jiných systémech stejnou práci zařizuje ``userdel``. I když tento skript existuje
-také v Ubuntu/Debian, zde preferujeme vždy ``deluser``.
+   také v Ubuntu/Debian, zde preferujeme vždy ``deluser``.
 
 .. todo:: Přidat odkaz do II do SSH s textem "Přestože SSH popisujeme v ____pokračování___ této
    příručky, zmínímě důležitý aspekt..."
@@ -394,7 +403,8 @@ Primární a sekundární členství
 ------------------------------
 
 Možná jste si při kontrole souborů ``/etc/passwd`` a ``/etc/group`` po vytvoření uživatele povšimli,
-že zde byla vytvořena skupina se stejným názvem, jako je název uživatele. Tato skupina se jmenuje *primární (či osobní) skupina* a právě založený uživatel je jejím jediným členem.
+že zde byla vytvořena skupina se stejným názvem, jako je název uživatele. Tato skupina se jmenuje
+*primární (či osobní) skupina* a právě založený uživatel je jejím jediným členem.
 
 Uživatel má svou primární skupinu uvedenou přímo v ``/etc/passwd`` jako číselné GID (může zde být
 uvedena jen jediná skupina pomocí GID). Čerstvě po vytvoření uživatele nemá tato skupina žádné další
@@ -521,11 +531,13 @@ délku, složitost, neopakování hesel, nebo časově omezená hesla (expirace)
 .. rubric:: PAM
 
 Toto všechno je možné pomocí tzv. PAM (PAssword Management) modulu, který je konfigurován pomocí
-souborů v ``/etc/pam.d/`` složce. Zmíněná minimální délka hesla se např. nastavuje v souboru ``/etc/pam.d/common-password``.
+souborů v ``/etc/pam.d/`` složce. Zmíněná minimální délka hesla se např. nastavuje v souboru
+``/etc/pam.d/common-password``.
 
 .. rubric:: Expirace hesla
 
-Aktuální dobu do vypršení hesla zjistíte ``sudo chage -l <uživatel>``. Bez parametru ``sudo chage <uživatel>`` budete postupně dotazování na jednotlivá nastavení..
+Aktuální dobu do vypršení hesla zjistíte ``sudo chage -l <uživatel>``. Bez parametru
+``sudo chage <uživatel>`` budete postupně dotazování na jednotlivá nastavení..
 
 .. rubric:: Poznámky
 

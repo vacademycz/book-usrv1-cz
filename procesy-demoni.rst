@@ -52,7 +52,7 @@ Provede stejnou operaci jako ``shutdown -r now``, ale je zapotřebí méně pís
 halt
 ----
 
-Provede zastavení OS - nevypíná napájení počítače. Narozdíl do `shudown -h` skutečně jen zastaví běh
+Provede zastavení OS - nevypíná napájení počítače. Narozdíl do ``shudown -h`` skutečně jen zastaví běh
 Linuxu. Využití v praxi neznáme.
 
 poweroff
