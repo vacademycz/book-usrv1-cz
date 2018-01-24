@@ -6,13 +6,14 @@
 Vítejte v příručce Ubuntu a Debian správce serveru I.!
 ======================================================
 
-Vítáme budoucí i současné administátory v příručce školení "Ubuntu Debian správce serveru I."
-(kód kurzu USRV1)! Tato publikace je doplňkem k našim
-`kurzům Linuxu <https://vacademy.cz/tema/linux/>`_ a nabízíme ji zdarma všem návštěvníkům a 
-samozřejmě našim studentům. Budeme rádi, když vám pomůže naučit se Ubuntu, Debian nebo dokonce i 
-jinou distribuci Linuxu.
+Vítáme budoucí i současné administátory v příručce "Ubuntu Debian správce serveru I."! Tato
+publikace může být skvělým doplňkem k našim `kurzům Linuxu <https://vacademy.cz/skoleni/linux/>`_,
+ale je koncipována jako zcela samostatná. Nabízíme ji zdarma všem návštěvníkům a samozřejmě našim
+studentům. Budeme rádi, když vám pomůže naučit se Ubuntu, Debian nebo dokonce i jinou distribuci
+Linuxu.
 
-.. tip:: Přijďte na toto nebo další `školení od autorů této příručky <https://vacademy.cz/>`_!
+.. tip:: Líbí se vám tato knížka? Přijďte na `školení od autorů této příručky
+   <https://vacademy.cz/>`_ na Vacademy.cz!
 
 .. rubric:: Licenční ujednání
 
@@ -28,7 +29,7 @@ může tyto podmínky v budoucnu upravovat. Při sdílení a šíření je nutn�
 odkazem.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Obsah:
    :numbered:
 
