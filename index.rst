@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Vítejte v příručce Ubuntu a Debian správce serveru I.!
-======================================================
+Vítá vás příručka Ubuntu a Debian správce serveru I.!
+=====================================================
 
 Vítáme budoucí i současné administátory v příručce "Ubuntu Debian správce serveru I."! Tato
 publikace může být skvělým doplňkem k našim `kurzům Linuxu <https://vacademy.cz/skoleni/linux/>`_,
